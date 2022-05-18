@@ -1,3 +1,3 @@
 # Awesome Scroll
 
-👉 [Page](https://n0ub4x.github.io/Awesome-Scroll/) 👈
+👉 [Awesome Scroll](https://n0ub4x.github.io/Multage/Awesome%20Scroll/index.html) 👈
