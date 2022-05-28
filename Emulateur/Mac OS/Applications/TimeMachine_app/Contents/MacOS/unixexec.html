@@ -1,0 +1,564 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+	<head>
+		<title>Time Machine.</title>
+	</head>
+	
+<body onload="Debug(); timeinit();" bgcolor="black" text="white" background="../Resources/timemachine_galaxy.jpg" oncontextmenu="return false;" marginheight=0 marginwidth=0>
+	<style>
+		.actionbutton
+			{
+				font-size:20px;
+			}
+		.actionbutton 
+			A
+			{
+				color:skyblue;
+				TEXT-DECORATION: none;
+			}
+		.actionbutton 
+			A:hover
+			{
+				TEXT-DECORATION: none;
+				color:red;
+			}
+		.timearrows
+		{
+			left: 830px;
+			top: 450px;
+			position: absolute;
+		}
+		.timeinformation
+		{
+			top: 738px;
+			left: 0px;
+			width: 1024px;
+			position: absolute;
+			z-index: 10000000;
+		}
+	
+	</style>
+
+<div id="mainscreen" style="position:absolute; z-Index:0; left:0; top:0; overflow:hidden; width:100%; height:100%;">
+
+</div>
+<div style="position:relative; z-Index:100000; width:0">
+<!--div id="mainscreen" style="overflow:hidden; width:100%; height:100%; position:relative"-->
+	<!--/div> 
+	<div style="position:absolute; z-index:100000; width:100%"-->
+		<span style="position:relative; z-index:100000">
+		
+		<!-- Text area made invisible - otherwise the code does not work -->
+		<!-- SE51, Build [1M0204] -->
+		
+		<textarea id=world3txt rows=10 cols=50 style="filter:alpha(opacity=70); -moz-opacity:.7; display:none" wrap=off onfocus="this.select()">
+		</textarea>
+		
+		<!-- Text area hack ends -->
+		
+		<table class="timearrows" cellspacing=0 cellpadding=0 width=140>
+
+			<tr>
+			<td align=left>
+				<a href="#" onmousedown="ymov=-.20*world3.yscale; return false;" onmouseup="ymov=0; redraw();"><img src="../Resources/into_past.png" border=0></a><br><br>
+			</td>
+			</tr>
+			
+			<tr>
+			<td align=right>
+				<a href="#" onmousedown="ymov=.20*world3.yscale; return false;" onmouseup="ymov=0; redraw();"><img src="../Resources/into_future.png" border=0></a>
+			</td>
+			</tr>
+			
+		</table>
+		
+		<!-- Info about website added -->
+		<!-- Build [1M0304] -->
+		
+		<table width=1024 height=30 border=0 cellspacing=0 cellpadding=0 align=center class="timeinformation" background="../Resources/timeinfo-back.png">
+		<tr>
+		<td valign=middle align=center width=934>
+		<font face="Lucida Grande, Tahoma" size=2 color=#FFFFFF><div id="timetext"><b>Present day.</b> SE51.net is online and is my current homepage.</div></font>
+		</td>
+		
+		<!-- Make it so button -->
+		
+		<td width=80 valign=middle align=center>
+		<div id="makeitso"></div>
+		</td>
+		
+		<td width=10></td>
+		
+		</tr>
+		</table>
+
+		</span>
+</div>
+
+
+		<script language="javascript" src="3d.js"></script>
+		<script language="javascript" src="sprite3.js"></script>
+		<script language="javascript" src="wall3.js"></script>
+
+		<script language="javascript">
+
+////////////////////////////////////////////////////////////////
+// 
+// unixexec.html for Time Machine
+// Part of OS X Mercury
+//
+// Original code Copyright (c) 2006 (Vinh Le Quang). 
+// http://www.bunnypot.com/3dworld/
+// You may copy or reuse this code only if you include this copyright notice.
+// Send comments to kwanguru@yahoo.com
+//
+////////////////////////////////////////////////////////////////
+
+
+
+var xcount = 5;
+var ycount = 5;
+var hcount = 5;
+var selection = null;
+var drag = false;
+
+var floor = new Array(xcount*ycount);
+var leftwall = new Array(hcount*ycount);
+var rightwall = new Array(hcount*ycount);
+//var farwall = new Array(100);
+var spriteslist = new Array(floor,leftwall,rightwall);
+//var farwall = new Sprite3();
+
+function timeinit()
+{
+world3.hscale = .5;
+world3.yscale = .3;
+//redrawAll();	
+/*	for(var s=0;s<spriteslist.length;s++)
+	{
+		var sprites = spriteslist[s];
+		for(var i=0;i<sprites.length;i++)
+		{
+			sprites[i] = new Sprite3();
+			sprites[i].addImage(s==0?"shadow.gif":s==3?"farwall.gif":"column.gif",20,30,false,100,null,null);
+		}
+	}
+	farwall.addImage("farwall.gif",100,100,false,100,null,null);
+	setPosition();
+*/
+//	var westwall = new Wall3(0,0,0,100);
+//	var eastwall = new Wall3(100,0,100,100);
+//	var northwall = new Wall3(0,100,100,100);
+//	var southwall = new Wall3(0,0,100,0);
+	var step = 25;
+	for(var i=0;i<100;i+=step)	
+	{
+		var westwall = new Wall3(0,i,0,i+step,16711680,true);
+		var eastwall = new Wall3(100,i,100,i+step,16711680,true);
+//		var northwall = new Wall3(i,100,i+step,100,16711680);
+//		var southwall = new Wall3(i,-50,i+step,-50,16711680);
+	}
+	var northwall = new Wall3(0,100,100,100,16711680,true);
+	
+	// var [name of element] = quicksprite("imagefile.png",X-COORDINATE,SIZE IN %,SHADOW - leave on false,OPACITY in %
+	
+	// name_of_element.moveTo(X,Z,Y)
+	// name_of_element.imgs[0].onmousedown = function;
+		
+	// X, Z, Y are measured from ground and appear to be in percent!!
+	
+	var window1 = quickSprite("../Resources/timecontent/2007/2007_SE51net.jpg",0,90,false,90);
+	window1.moveTo(22,0,0);
+	window1.imgs[0].onmousedown = presentday;
+	
+	var window2 = quickSprite("../Resources/timecontent/2006/2006_se51first.jpg",0,90,false,90);
+	window2.moveTo(22,15,0);
+	window2.imgs[0].onmousedown = timewarp01;
+	
+	var window3 = quickSprite("../Resources/timecontent/2005/2005_24som.jpg",0,90,false,90);
+	window3.moveTo(22,30,0);
+	window3.imgs[0].onmousedown = timewarp02;
+	
+	var window4 = quickSprite("../Resources/timecontent/2005/2005_siriusbytes.jpg",0,90,false,90);
+	window4.moveTo(22,45,0);
+	window4.imgs[0].onmousedown = timewarp03;
+	
+	var window5 = quickSprite("../Resources/timecontent/2004/2004_lastos.jpg",0,90,false,90);
+	window5.moveTo(22,60,0);
+	window5.imgs[0].onmousedown = timewarp04;
+	
+	var window6 = quickSprite("../Resources/timecontent/2004/2004_onlinetotal.jpg",0,90,false,90);
+	window6.moveTo(22,75,0);
+	window6.imgs[0].onmousedown = timewarp05;
+	
+	var window7 = quickSprite("../Resources/timecontent/2003/2003_generationos.jpg",0,90,false,90);
+	window7.moveTo(22,90,0);
+	window7.imgs[0].onmousedown = timewarp06;
+	
+	var window8 = quickSprite("../Resources/timecontent/2003/2003_sk8erboisecke.jpg",0,90,false,90);
+	window8.moveTo(22,105,0);
+	window8.imgs[0].onmousedown = timewarp07;
+	window8.imgs[0].onclick = timewarp07;
+	
+	var window9 = quickSprite("../Resources/timecontent/2002/2002_giga-ie.jpg",0,90,false,90);
+	window9.moveTo(22,120,0);
+	window9.imgs[0].onmousedown = timewarp08;
+	
+	var window10 = quickSprite("../Resources/timecontent/2002/2002_ussunity-net.jpg",0,90,false,90);
+	window10.moveTo(22,135,0);
+	window10.imgs[0].onmousedown = timewarp09;
+	
+	var window11 = quickSprite("../Resources/timecontent/2001/2001_annikaljungberginfo.jpg",0,90,false,90);
+	window11.moveTo(22,150,0);
+	window11.imgs[0].onmousedown = timewarp10;
+	
+	redraw();
+	startGame();
+}
+
+
+// Time Machine's functions to open Safari browsers and display the Make It So button
+
+// WELCOME TO WARP ZONE!
+
+function presentday()
+{
+	document.getElementById("makeitso").innerHTML = "<img src='../Resources/transparent.png'>";
+	document.getElementById("timetext").innerHTML = "<b>Present day.</b> SE51.net is online and is my current homepage.";
+}
+
+function timewarp01()
+{
+	document.getElementById("makeitso").innerHTML = "<a href=\"javascript:Application.openSafariTimeMachine01('mac_os_x')\" target=_top><img src='../Resources/makeitso_01.png' border='0'></a>";
+	document.getElementById("timetext").innerHTML = "<b>2006</b> - First edition of a SE51 site, retired soon after launch";
+}
+
+function timewarp02()
+{
+	document.getElementById("makeitso").innerHTML = "<a href=\"javascript:Application.openSafariTimeMachine02('mac_os_x')\" target=_top><img src='../Resources/makeitso_01.png' border='0'></a>";
+	document.getElementById("timetext").innerHTML = "<b>2005</b> - 24 / Shadow of Memories project site";
+}
+
+function timewarp03()
+{
+	document.getElementById("makeitso").innerHTML = "<a href=\"javascript:Application.openSafariTimeMachine03('mac_os_x')\" target=_top><img src='../Resources/makeitso_01.png' border='0'></a>";
+	document.getElementById("timetext").innerHTML = "<b>2005</b> - Sirius Bytes. I had the idea of private IT service in Dublin.";
+}
+
+function timewarp04()
+{
+	document.getElementById("makeitso").innerHTML = "<a href=\"javascript:Application.openSafariTimeMachine04('mac_os_x')\" target=_top><img src='../Resources/makeitso_01.png' border='0'></a>";
+	document.getElementById("timetext").innerHTML = "<b>2004</b> - last.os. The idea for my own Linux flavor. On hold in the moment.";
+}
+
+function timewarp05()
+{
+	document.getElementById("makeitso").innerHTML = "<a href=\"javascript:Application.openSafariTimeMachine05('mac_os_x')\" target=_top><img src='../Resources/makeitso_01.png' border='0'></a>";
+	document.getElementById("timetext").innerHTML = "<b>2004</b> - Online Total. For some time, it has been my homepage.";
+}
+
+function timewarp06()
+{
+	document.getElementById("makeitso").innerHTML = "<a href=\"javascript:Application.openSafariTimeMachine06('mac_os_x')\" target=_top><img src='../Resources/makeitso_01.png' border='0'></a>";
+	document.getElementById("timetext").innerHTML = "<b>2003</b> - Generation OS. Previous name of last.os. GOS had a different design.";
+}
+
+function timewarp07()
+{
+	document.getElementById("makeitso").innerHTML = "<a href=\"javascript:Application.openSafariTimeMachine07('mac_os_x')\" target=_top><img src='../Resources/makeitso_01.png' border='0'></a>";
+	document.getElementById("timetext").innerHTML = "<b>2003</b> - Sk8er Bois corner. That was my nickname once, and thus my site.";
+}
+
+function timewarp08()
+{
+	document.getElementById("makeitso").innerHTML = "<a href=\"javascript:Application.openSafariTimeMachine08('mac_os_x')\" target=_top><img src='../Resources/makeitso_01.png' border='0'></a>";
+	document.getElementById("timetext").innerHTML = "<b>2002</b> - Giga.ie. A community I was wanting to set up, but never launched.";
+}
+
+function timewarp09()
+{
+	document.getElementById("makeitso").innerHTML = "<a href=\"javascript:Application.openSafariTimeMachine09('mac_os_x')\" target=_top><img src='../Resources/makeitso_01.png' border='0'></a>";
+	document.getElementById("timetext").innerHTML = "<b>2002</b> - USS Unity.net. Earlier site for the Unity project";
+}
+
+function timewarp10()
+{
+	document.getElementById("makeitso").innerHTML = "<a href=\"javascript:Application.openSafariTimeMachine10('mac_os_x')\" target=_top><img src='../Resources/makeitso_01.png' border='0'></a>";
+	document.getElementById("timetext").innerHTML = "<b>2001</b> - Annika Ljungberg.info. An information site for a swedisch singer. My first website.";
+}
+
+
+
+// Time Machine functions end
+
+
+
+function ondragimg()
+{
+	if(selection)
+		selection.imgs[0].style.backgroundColor = "";
+	selection=this.sprite;
+	drag = true;
+
+//	alert(this.sprite);
+	return false;
+}
+
+function setPosition()
+{
+	for(var s=0;s<spriteslist.length;s++)
+	{
+		var sprites = spriteslist[s];
+		for(var i=0;i<sprites.length;i++)
+		{
+			var x = s==1?0:s==2?100:(i%xcount)*(100/xcount);
+			var y = s==1||s==2?(i%ycount)*(100/ycount):s==3?100:Math.floor(i/xcount)%(ycount)*(100/ycount);
+			var h = s==0?0:Math.floor(i/ycount)%hcount*(100/hcount);
+			sprites[i].moveTo(x,y,h);
+		}	
+	}
+	farwall.moveTo(50,100,0);
+}
+
+function format(number)
+{
+	return Math.round(10*number)/10;
+}
+
+window.redraw = window.onresize = function ()
+{
+
+	redrawAll();
+	var str = unescape("%3C%21-- cut and paste the HTML below in your page --%3E\n\n");
+	str += unescape("%3Cscript src%3D%22http%3A//www.bunnypot.com/library/3d.js%22%3E");
+	str += unescape("%3C/script%3E\n");
+	str += unescape("%3Cscript src%3D%22http%3A//www.bunnypot.com/library/sprite3.js%22%3E");
+	str += unescape("%3C/script%3E\n");
+	str += unescape("%3Cscript language%3D%22javascript%22%3E");
+	str += "\n\n";
+	str += "function init()\n";
+	str += "{\n";
+	str += world3 + "\n";
+	
+	for(var i=0;i<world3.sprites.length;i++)
+	{
+		var sprite = world3.sprites[i];
+		if(!sprite.dead && sprite.imgs!=null && sprite.imgs.length>0)
+		{
+			if(sprite.imgs.length>1)
+			{
+				str += '{var sprite = new Sprite3();\n';
+				for(var j=0;j<sprite.imgs.length;j++)
+				{
+					var img = sprite.imgs[j];
+					str += 'sprite.addImage(getrealsrc("' + filename(img.src) + '"),' + img.originalwidth + ',' + img.originalheight + ',' + (img.shadow?'true':'false') + ',100,null,null)\n';
+				}
+				str += 'sprite.moveTo(' + format(sprite.x3) + ',' + format(sprite.y3) + ',' + format(sprite.h3) + ')';
+				if(sprite.mov)
+				{
+					str += '.setMotion(' + sprite.mov.x3 + ',' + sprite.mov.y3 + ',' + sprite.mov.h3 + ',' + sprite.gravity + ')';
+				}
+				str += ";\n}\n";
+			}
+			else
+			{
+				var img = sprite.imgs[0];
+				str += 'quickSprite("' + filename(img.src) + '",' + img.originalwidth + ',' + img.originalheight + ',' + (img.shadow?'true':'false') + ',100)';
+				str += '.moveTo(' + format(sprite.x3) + ',' + format(sprite.y3) + ',' + format(sprite.h3) + ')';
+				if(sprite.mov)
+				{
+					str += '.setMotion(' + sprite.mov.x3 + ',' + sprite.mov.y3 + ',' + sprite.mov.h3 + ',' + sprite.gravity + ')';
+				}
+				str += ";\n";
+			}
+		}
+	}
+	
+	str += "\n";
+	str += "startGame();\n";
+	str += "}\n";
+	str += "window.onload=init;\n";
+	
+	str += "\n";
+	
+	str += refresh.toString().replace(/\t/g,"").replace(/\s/g," ") + "\n";
+	
+	str += unescape("%3C/script%3E\n");
+	str += unescape("%3Cdiv%20id%3D%22mainscreen%22%20style%3D%22position%3Aabsolute%3B%20left%3A0%3B%20top%3A0%3B%20overflow%3Ahidden%3B%20width%3A100%25%3B%20height%3A100%25%3B%22%3E%3C/div%3E\n");
+	str += unescape("%3C%21-- the 3d was generated by 3D World Creator (http://www.bunnypot.com/3dworld) --%3E\n\n");
+	str += unescape("%3C%21-- send your comments to Vinh Le Quang (kwanguru@yahoo.com) --%3E\n\n");
+	world3txt.value = str;
+//	displayWall3(0,0,0,100,100,"red");
+//	displayWall3bis(100,0,100,100,100,"red");
+};
+
+function screen2XY(scrx,scry,target)
+{
+	var h3,y3,x3;
+	var middlescreen = mainscreen.offsetWidth/2;
+	
+	y3 = Math.max(0,Math.min(100,-20 + 10000/scry));
+	x3 = Math.max(0,Math.min(100,50+(scrx-middlescreen)*y3/100));
+	h3 = 0;
+	
+	if(!target)
+		target = new Point3(x3,y3,h3);
+	else
+		target.setPoint(x3,y3,h3);
+	return target;
+}
+
+var prexy = new Point2(0,0);
+document.onmousemove = function /*document.onmousemove*/(e)
+{
+	if(!e)
+		e = window.event;
+	var scrx = e.clientX;
+	var scry = e.clientY + world3.top;
+	var xdiff = scrx-prexy.x2;
+	var ydiff = scry-prexy.y2;
+	prexy.setPoint(scrx,scry);
+	
+	if(selection && drag)
+	{
+		selection.moveTo(selection.x3 + xdiff,selection.y3 - ydiff,selection.h3);
+		
+//		var point = screen2XY(scrx,scry);
+	//	selection.moveTo(point.x3,point.y3,point.h3);
+		redraw();
+	}
+	return false;
+};
+
+document.onmouseup = function (e)
+{
+	drag = false;
+	if(selection)
+	{
+//		selection.imgs[0].style.backgroundColor = "";
+//		selection = null;
+	}
+	return false;
+};
+
+function bounceImg()
+{
+	if(selection)
+	{
+		selection.setMotion(0,0,.1);
+		selection.gravity = .0001;
+	}
+}
+
+function removeImg()
+{
+	if(selection)
+	{
+		for(var i=0;i<selection.imgs.length;i++)
+		{
+			selection.imgs[i].style.display = "none";
+			if(selection.imgs[i].shadow)
+			{
+				selection.imgs[i].shadow.style.display = "none";
+			}
+		}
+		selection.dead = true;
+		selection = null;
+	}
+}
+
+function addImage()
+{
+	var src = prompt("Enter the image URL","");
+	if(!src || src=="")
+		return;
+	var size = prompt("Enter the image height",50);
+	if(!size)
+		return;
+	var sprite = quickSprite(src,0,parseInt(size),false,100);
+	sprite.imgs[0].onmousedown = ondragimg;	
+	
+	
+	
+}
+
+var xmov = 0, ymov = 0, hmov = 0, slopemov = 0;
+var xscalemov = 0, yscalemov = 0, hscalemov = 0;
+function refresh(duration)
+{
+	if(xmov != 0 || ymov!=0 || hmov!=0 || slopemov!=0 || xscalemov!=0 || yscalemov!=0 || hscalemov!=0)
+	{
+		world3.xstart += xmov*duration;
+		world3.ystart += ymov*duration;
+		world3.hstart += hmov*duration;
+		world3.slope += slopemov*duration;
+		world3.xscale += xscalemov*duration;
+		world3.yscale += yscalemov*duration;
+		world3.hscale += hscalemov*duration;
+		dirtyAll();
+	}
+	for(var i=0;i<world3.mobiles.length;i++)
+	{
+		world3.mobiles[i].move(duration);
+		if(world3.mobiles[i].h3<0)
+		{
+			world3.mobiles[i].h3=-world3.mobiles[i].h3;
+			world3.mobiles[i].mov.h3 = .1;
+		}
+	}
+}
+
+/*
+function displayWall3(x3start,y3start,x3finish,y3finish,h3,color)
+{
+	var p2topstart = new Point3(x3start,y3start,h3).convertToScreen();
+	var p2topfinish = new Point3(x3finish,y3finish,h3).convertToScreen();
+	var p2botstart = new Point3(x3start,y3start,0).convertToScreen();
+	var p2botfinish = new Point3(x3finish,y3finish,0).convertToScreen();
+
+//	alert(p3topstart.convertToScreen());
+	if(p2topstart.y2<p2topfinish.y2)
+	{
+		tl.style.backgroundColor = color;
+		display2D(tl,p2topstart,p2topfinish);
+	}
+	
+	cn.style.backgroundColor = color;
+	display2D(cn,new Point2(p2topstart.x2,p2topfinish.y2),new Point2(p2botfinish.x2,p2botfinish.y2));
+
+	bl.style.backgroundColor = color;
+	display2D(bl,p2botstart,p2botfinish);
+}
+
+function displayWall3bis(x3start,y3start,x3finish,y3finish,h3,color)
+{
+	var p2topstart = new Point3(x3start,y3start,h3).convertToScreen();
+	var p2topfinish = new Point3(x3finish,y3finish,h3).convertToScreen();
+	var p2botstart = new Point3(x3start,y3start,0).convertToScreen();
+	var p2botfinish = new Point3(x3finish,y3finish,0).convertToScreen();
+
+//	alert(p3topstart.convertToScreen());
+	if(p2topstart.y2<p2topfinish.y2)
+	{
+		tr.style.backgroundColor = color;
+		display2D(tr,p2topstart,p2topfinish);
+	}
+	
+	cn2.style.backgroundColor = color;
+	display2D(cn2,new Point2(p2topstart.x2,p2topfinish.y2),new Point2(p2botfinish.x2,p2botfinish.y2));
+
+	br.style.backgroundColor = color;
+	display2D(br,p2botstart,p2botfinish);
+}
+*/
+
+function Debug()
+{
+}
+
+		</script>
+
+
+	</body>
+</html>

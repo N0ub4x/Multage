@@ -1,0 +1,152 @@
+<html>
+
+<head>
+<title>Safari for Mercury</title>
+
+<!-- Google Search functions -->
+<script>
+
+function googlesearch() {
+
+var keyword = document.getElementById('googlebar').value;
+
+document.getElementById('websitebox').src = 'http://www.google.com/search?hl=en&q=' + keyword + '';
+
+document.getElementById('addressbar').value = 'http://www.google.com/search?hl=en&q=' + keyword + '';
+
+}
+
+
+function enteraddress() {
+	
+	var address = document.getElementById('addressbar').value;
+	
+	document.getElementById('websitebox').src = address;
+
+}
+
+
+</script>
+
+<base target="websitebox">
+
+</head>
+
+<body bgcolor=#FFFFFF marginwidth=0 marginheight=0>
+
+<table width=100% height=30 border=0 cellspacing=0 cellpadding=0 background="../../../System/CoreServices/Finder_app/Contents/Resources/toolbar_back.png">
+<tr>
+
+<td width=10 height=30></td>
+
+<td valign=middle align=left width=170>
+
+<img src="Resources/Back.png" onclick="javascript:history.back()" onmousedown="this.src='Resources/BackPressed.png'" onmouseup="this.src='Resources/Back.png'"><img src="Resources/Forward.png" onclick="javascript:history.forward()" onmousedown="this.src='Resources/ForwardPressed.png'" onmouseup="this.src='Resources/Forward.png'">&nbsp;&nbsp;<img src="Resources/Stop.png" onclick="javascript:stop()" onmousedown="this.src='Resources/StopPressed.png'" onmouseup="this.src='Resources/Stop.png'">&nbsp;&nbsp;<img src="Resources/Reload.png" onclick="javascript:location.reload()" onmousedown="this.src='Resources/ReloadPressed.png'" onmouseup="this.src='Resources/Reload.png'">&nbsp;&nbsp;<a href="http://www.apple.com/startpage" target="websitebox"><img border=0 src="Resources/Home.png" style="cursor: default;" onmousedown="this.src='Resources/HomePressed.png'" onmouseup="this.src='Resources/Home.png'" onclick="javascript:document.getElementById('addressbar').value = 'http://www.apple.com/startpage'"></a>
+
+</td>
+
+
+<td width=480 valign=middle align=left>
+
+<table width=480 height=18 border=0 cellspacing=0 cellpadding=0>
+<tr>
+<td width=3 bgcolor=#FFFFFF></td>
+<td bgcolor=#FFFFFF valign=middle align=left width=14>
+<img src=Resources/smallglobe.gif>
+</td>
+<td width=3 bgcolor=#FFFFFF></td>
+<td width=460 valign=middle align=left>
+<input style="border: 0px;" id="addressbar" name="addressbar" type="text" size="54" value="http://news.google.com" onkeypress="javascript:if(event.keyCode==13) enteraddress()">
+</td>
+</table>
+
+</td>
+
+<td width=*></td>
+
+<td width=24 valign=middle align=right>
+<img src="../../../System/CoreServices/Finder_app/Contents/Resources/spotlight-finder-left.gif">
+</td>
+
+<td width=* height=29 valign=middle align=left>
+
+<table width=100% height=22 border=0 cellspacing=0 cellpadding=0 align=right>
+<tr>
+<td background="../../../System/CoreServices/Finder_app/Contents/Resources/spotlight-finder-middle.gif">
+<input onkeypress="javascript:if(event.keyCode==13) googlesearch()" style="border: 0px;" id="googlebar" name="googlebar" type="text" size="25">
+</td>
+</tr>
+</table>
+
+
+</td>
+
+<td width=20 valign=middle align=left>
+<img src="../../../System/CoreServices/Finder_app/Contents/Resources/spotlight-finder-right.gif">
+</td>
+
+</tr>
+</table>
+
+<!-- ------------------ -->
+
+<!-- Bookmark Bar -->
+
+<table width=100% height=20 bgcolor=#999999 border=0 cellspacing=0 cellpadding=0 align=left>
+<tr>
+
+<td width=10></td>
+
+<td valign=middle align=left width=20>
+<img src="Resources/BookmarksButton.png" onmouseover="this.src='Resources/BookmarksButton_Rollover.png'" onmouseout="this.src='Resources/BookmarksButton.png'" onclick="this.src='Resources/BookmarksButton_Selected.png';document.getElementById('websitebox').src='networklist_safari.html';">
+</td>
+
+<td width=10></td>
+
+<td valign=middle align=left width=100>
+<a href="http://www.apple.com/macosx/leopard/" target="websitebox" style="text-decoration:none;" onclick="javascript:document.getElementById('addressbar').value = 'http://www.apple.com/macosx/leopard/'"><font face="Lucida Grande, Tahoma" size="1" color="#333333"><b>Mac OS X Leopard</b></a>
+</td>
+
+<td width=10></td>
+
+<td valign=middle align=left width=130>
+<a href="http://thelonelyhorseman.wordpress.com" target="websitebox" style="text-decoration:none;" onclick="javascript:document.getElementById('addressbar').value = 'http://thelonelyhorseman.wordpress.com'"><font face="Lucida Grande, Tahoma" size="1" color="#333333"><b>The Lonely Horseman</b></a>
+</td>
+
+<td width=10></td>
+
+<td valign=middle align=left width=60>
+<a href="http://1802.eu" target="websitebox" style="text-decoration:none;" onclick="javascript:document.getElementById('addressbar').value = 'http://1802.eu'"><font face="Lucida Grande, Tahoma" size="1" color="#333333"><b>1802.eu</b></a>
+</td>
+
+<td width=10></td>
+
+<td valign=middle align=left width=100>
+<a href="http://www.stuffonmycat.com" target="websitebox" style="text-decoration:none;" onclick="javascript:document.getElementById('addressbar').value = 'http://www.stuffonmycat.com'"><font face="Lucida Grande, Tahoma" size="1" color="#333333"><b>Stuff On My Cat</b></a>
+</td>
+
+<td width=10></td>
+
+<td valign=middle align=left width=55>
+<a href="http://www.adiumx.com" target="websitebox" style="text-decoration:none;" onclick="javascript:document.getElementById('addressbar').value = 'http://www.adiumx.com'"><font face="Lucida Grande, Tahoma" size="1" color="#333333"><b>AdiumX</b></a>
+</td>
+
+<td width=10></td>
+
+<td valign=middle align=left width=70>
+<a href="http://www.blender3d.org" target="websitebox" style="text-decoration:none;" onclick="javascript:document.getElementById('addressbar').value = 'http://www.blender3d.org'"><font face="Lucida Grande, Tahoma" size="1" color="#333333"><b>Blender</b></a>
+</td>
+
+<td width=400></td>
+
+</tr>
+</table>
+
+<!-- Main content of browser -->
+
+<iframe src="http://news.google.com" id="websitebox" name="websitebox" width="100%" height="90%" frameborder="0">
+</iframe>
+
+
+</body>
+</html>

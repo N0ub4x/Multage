@@ -1,0 +1,127 @@
+<html>
+<head>
+<title>System Preferences</title>
+
+<style type="text/css">
+.update 		{font-size: 11.5px;font-family: Lucida Grande, Tahoma;color: #000000; }
+</style>
+
+<script>
+
+function showSoftwareUpdate() {
+	document.getElementById('display').style.display = 'none';
+	document.getElementById('softwareupdate').style.display = '';
+	document.getElementById('wallpaper').style.display = 'none';
+}
+</script>
+
+
+</head>
+
+<body bgcolor=#FFFFFF oncontextmenu="return false;" marginwidth=0 marginheight=0>
+
+
+
+
+<!-- Pref panels -->
+
+<table width=583 background="Resources/prefpanel-back.png" height=104 border=0 align=center cellspacing=0 cellpadding=0>
+<tr height=104>
+
+<td valign=middle align=left width=10></td>
+
+<td valign=top align=left>
+
+<img src="Resources/transparent.png" height=5><br>
+<font face="Lucida Grande, Tahoma" size=2 color=#000000><b>Software Update</b><br>
+<img src="Resources/transparent.png" height=5><br>
+
+<table width=100% height=70% border=0 height=0 cellspacing=0 cellpadding=0 align=left>
+<tr>
+
+<td width=100 valign=middle align=center>
+<img src="Resources/prefpane_update.png" onclick="showSoftwareUpdate()">
+</td>
+
+<td valign=middle align=center>
+<img src="Resources/transparent.png">
+</td>
+
+</tr>
+</table>
+
+
+</td>
+
+<td valign=middle align=left width=10></td>
+
+</tr>
+</table>
+
+
+
+<!-- Pref panel content -->
+
+<table width=583 bgcolor=#dbdbdb height=300 border=0 align=center cellspacing=0 cellpadding=0>
+<tr height=300>
+<td valign=middle align=left width=10></td>
+
+<td valign=top align=left>
+
+<!-- Software Update -->
+
+<div id="softwareupdate">
+
+<table width=98% border=0 align=left cellspacing=0 cellpadding=0>
+<tr>
+<td width=14 height=14 valign=top align=left><img src="Resources/panel_nw.png"></td>
+<td height=14 valign=top align=left background="Resources/panel_n.png"></td>
+<td width=14 height=14 valign=top align=left><img src="Resources/panel_ne.png"></td>
+</tr>
+
+<tr height=250>
+<td width=14 valign=top align=left background="Resources/panel_w.png"></td>
+<td height=14 height=250 valign=top align=left bgcolor=#d4d4d4>
+
+<font face="Lucida Grande, Tahoma, Helvetica" size=2>Installed Updates<br><br>
+
+<center>
+<textarea class="update" name="update" cols="40" rows="12" readonly wrap="soft">
+OS X Mercury Core System 1.0.3
+Safari Patch 2007-001
+Finder 10.4.7
+iTunes 1.0
+Time Machine 1.0.2
+Safari 1.0
+Dashboard 1.0.1
+iWeb 1.0
+Mail 1.0.1
+iPhoto 1.0
+System Preferences 1.0
+iChat 1.0
+Preview 1.0
+</textarea>
+</center>
+
+</td>
+<td width=14 valign=top align=left background="Resources/panel_e.png"></td>
+</tr>
+
+<tr>
+<td width=14 height=14 valign=top align=left><img src="Resources/panel_sw.png"></td>
+<td height=14 valign=top align=left background="Resources/panel_s.png"></td>
+<td width=14 height=14 valign=top align=left><img src="Resources/panel_se.png"></td>
+</tr>
+</table>
+
+</div>
+
+</td>
+
+<td valign=middle align=left width=10></td>
+</tr>
+</table>
+
+</body>
+
+</html>

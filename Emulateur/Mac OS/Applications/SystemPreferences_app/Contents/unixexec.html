@@ -1,0 +1,270 @@
+<html>
+<head>
+<title>System Preferences</title>
+
+<style type="text/css">
+.update 		{font-size: 11.5px;font-family: Lucida Grande, Tahoma;color: #000000; }
+</style>
+
+<script>
+function showWallpaper() {
+	document.getElementById('display').style.display = 'none';
+	document.getElementById('softwareupdate').style.display = 'none';
+	document.getElementById('wallpaper').style.display = '';
+	document.getElementById('prefpane1').style.backgroundImage = 'url(Resources/prefpanel-back-sel.png)';
+	document.getElementById('prefpane2').style.backgroundImage = 'url(Resources/prefpanel-back.png)';
+	document.getElementById('prefpane3').style.backgroundImage = 'url(Resources/prefpanel-back.png)';
+}
+
+function showDisplay() {
+	document.getElementById('display').style.display = '';
+	document.getElementById('softwareupdate').style.display = 'none';
+	document.getElementById('wallpaper').style.display = 'none';
+	document.getElementById('prefpane1').style.backgroundImage = 'url(Resources/prefpanel-back.png)';
+	document.getElementById('prefpane2').style.backgroundImage = 'url(Resources/prefpanel-back-sel.png)';
+	document.getElementById('prefpane3').style.backgroundImage = 'url(Resources/prefpanel-back.png)';
+}
+
+function showSoftwareUpdate() {
+	document.getElementById('display').style.display = 'none';
+	document.getElementById('softwareupdate').style.display = '';
+	document.getElementById('wallpaper').style.display = 'none';
+	document.getElementById('prefpane1').style.backgroundImage = 'url(Resources/prefpanel-back.png)';
+	document.getElementById('prefpane2').style.backgroundImage = 'url(Resources/prefpanel-back.png)';
+	document.getElementById('prefpane3').style.backgroundImage = 'url(Resources/prefpanel-back-sel.png)';
+}
+</script>
+
+
+</head>
+
+<body bgcolor=#FFFFFF oncontextmenu="return false;" marginwidth=0 marginheight=0>
+
+
+
+
+<!-- Pref panels -->
+
+<table width=583 background="Resources/prefpanel-back.png" height=104 border=0 align=center cellspacing=0 cellpadding=0>
+<tr height=104>
+
+<td valign=middle align=left width=10></td>
+
+<td valign=top align=left>
+
+<img src="Resources/transparent.png" height=5><br>
+<font face="Lucida Grande, Tahoma" size=2 color=#000000><b>OS X Preferences</b><br>
+<img src="Resources/transparent.png" height=5><br>
+
+<table width=100% height=70% border=0 height=0 cellspacing=0 cellpadding=0 align=left>
+<tr>
+
+<td width=100 valign=middle align=center id="prefpane1">
+<img src="Resources/prefpane_desktop.png" onclick="showWallpaper()"><br>
+<font face="Lucida Grande, Tahoma" size=1>
+Desktop Wallpaper
+</td>
+
+<td width=100 valign=middle align=center id="prefpane2">
+<img src="Resources/prefpane_display.png" onclick="showDisplay()"><br>
+<font face="Lucida Grande, Tahoma" size=1>
+Display
+</td>
+
+<td width=100 valign=middle align=center id="prefpane3">
+<img src="Resources/prefpane_update.png" onclick="showSoftwareUpdate()"><br>
+<font face="Lucida Grande, Tahoma" size=1>
+Software Update
+</td>
+
+<td valign=middle align=center>
+<img src="Resources/transparent.png">
+</td>
+
+</tr>
+</table>
+
+
+</td>
+
+<td valign=middle align=left width=10></td>
+
+</tr>
+</table>
+
+
+
+<!-- Pref panel content -->
+
+<table width=583 bgcolor=#dbdbdb height=300 border=0 align=center cellspacing=0 cellpadding=0>
+<tr height=300>
+<td valign=middle align=left width=10></td>
+
+<td valign=top align=left>
+
+<!-- Display settings -->
+
+<div id="display" style="display:none;">
+
+<table width=98% border=0 align=left cellspacing=0 cellpadding=0>
+<tr>
+<td width=14 height=14 valign=top align=left><img src="Resources/panel_nw.png"></td>
+<td height=14 valign=top align=left background="Resources/panel_n.png"></td>
+<td width=14 height=14 valign=top align=left><img src="Resources/panel_ne.png"></td>
+</tr>
+
+<tr height=250>
+<td width=14 valign=top align=left background="Resources/panel_w.png"></td>
+<td height=14 height=250 valign=top align=left bgcolor=#d4d4d4>
+
+<font face="Lucida Grande, Tahoma, Helvetica" size=2>Set display resolution<br><br><br>
+
+<table width=100% height=100% border=0 cellspacing=0 cellpadding=0 align=center>
+<tr>
+
+<td width=45% valign=middle align=center>
+<a href="javascript:changeDisplayResolution17()" target="_top"><img style="cursor:default;" border=0 src="Resources/screen17.png"></a>
+</td>
+
+<td width=10%><img src="Resources/transparent.png"></td>
+
+<td width=45% valign=middle align=center>
+<a href="javascript:changeDisplayResolution19()" target="_top"><img style="cursor:default;" border=0 src="Resources/screen19.png"></a>
+</td>
+
+</tr>
+
+<tr>
+
+<td width=45% valign=middle align=center>
+<font face="Lucida Grande, Tahoma" size=2>17 Inch<br>
+<font face="Lucida Grande, Tahoma" size=1>1024x768
+</td>
+
+<td width=10%><img src="Resources/transparent.png"></td>
+
+<td width=45% valign=middle align=center>
+<font face="Lucida Grande, Tahoma" size=2>19 Inch<br>
+<font face="Lucida Grande, Tahoma" size=1>1280x1024
+</td>
+
+</tr>
+
+</table><br><br>
+
+<font size=2><center>Click one one of the icons to change the display size.</center>
+
+</td>
+<td width=14 valign=top align=left background="Resources/panel_e.png"></td>
+</tr>
+
+<tr>
+<td width=14 height=14 valign=top align=left><img src="Resources/panel_sw.png"></td>
+<td height=14 valign=top align=left background="Resources/panel_s.png"></td>
+<td width=14 height=14 valign=top align=left><img src="Resources/panel_se.png"></td>
+</tr>
+</table>
+
+</div>
+
+
+<!-- Wallpaper settings -->
+
+<div id="wallpaper" style="display:none;">
+
+<table width=98% border=0 align=left cellspacing=0 cellpadding=0>
+<tr>
+<td width=14 height=14 valign=top align=left><img src="Resources/panel_nw.png"></td>
+<td height=14 valign=top align=left background="Resources/panel_n.png"></td>
+<td width=14 height=14 valign=top align=left><img src="Resources/panel_ne.png"></td>
+</tr>
+
+<tr height=250>
+<td width=14 valign=top align=left background="Resources/panel_w.png"></td>
+<td height=14 height=250 valign=top align=left bgcolor=#d4d4d4>
+
+<font face="Lucida Grande, Tahoma, Helvetica" size=2>Choose a background image<br><br><br>
+
+<center>
+<a href="javascript:setWallpaper01()" target=_top><img src="../../../Library/DesktopWallpaper/1024x768/thumb/AquaBlue.jpg" style="cursor:default;border:1px solid black; border-color:#000000;"></a>
+<a href="javascript:setWallpaper02()" target=_top><img src="../../../Library/DesktopWallpaper/1024x768/thumb/AquaGraphite.jpg" style="cursor:default;border:1px solid black; border-color:#000000;"></a>
+<a href="javascript:setWallpaper03()" target=_top><img src="../../../Library/DesktopWallpaper/1024x768/thumb/ClownFish.jpg" style="cursor:default;border:1px solid black; border-color:#000000;"></a>
+<a href="javascript:setWallpaper04()" target=_top><img src="../../../Library/DesktopWallpaper/1024x768/thumb/EveningReflections.jpg" style="cursor:default;border:1px solid black; border-color:#000000;"></a><br><br>
+<a href="javascript:setWallpaper05()" target=_top><img src="../../../Library/DesktopWallpaper/1024x768/thumb/FauxFur.jpg" style="cursor:default;border:1px solid black; border-color:#000000;"></a>
+<a href="javascript:setWallpaper06()" target=_top><img src="../../../Library/DesktopWallpaper/1024x768/thumb/FlowingRock.jpg" style="cursor:default;border:1px solid black; border-color:#000000;"></a>
+<a href="javascript:setWallpaper07()" target=_top><img src="../../../Library/DesktopWallpaper/1024x768/thumb/GentleRapids.jpg" style="cursor:default;border:1px solid black; border-color:#000000;"></a>
+<a href="javascript:setWallpaper08()" target=_top><img src="../../../Library/DesktopWallpaper/1024x768/thumb/JaguarAquaBlue.jpg" style="cursor:default;border:1px solid black; border-color:#000000;"></a>
+
+</center>
+
+</td>
+<td width=14 valign=top align=left background="Resources/panel_e.png"></td>
+</tr>
+
+<tr>
+<td width=14 height=14 valign=top align=left><img src="Resources/panel_sw.png"></td>
+<td height=14 valign=top align=left background="Resources/panel_s.png"></td>
+<td width=14 height=14 valign=top align=left><img src="Resources/panel_se.png"></td>
+</tr>
+</table>
+
+</div>
+
+
+<!-- Software Update -->
+
+<div id="softwareupdate" style="display:none;">
+
+<table width=98% border=0 align=left cellspacing=0 cellpadding=0>
+<tr>
+<td width=14 height=14 valign=top align=left><img src="Resources/panel_nw.png"></td>
+<td height=14 valign=top align=left background="Resources/panel_n.png"></td>
+<td width=14 height=14 valign=top align=left><img src="Resources/panel_ne.png"></td>
+</tr>
+
+<tr height=250>
+<td width=14 valign=top align=left background="Resources/panel_w.png"></td>
+<td height=14 height=250 valign=top align=left bgcolor=#d4d4d4>
+
+<font face="Lucida Grande, Tahoma, Helvetica" size=2>Installed Updates<br><br>
+
+<center>
+<textarea class="update" name="update" cols="40" rows="12" readonly wrap="soft">
+OS X Mercury Core System 1.0.3
+Safari Patch 2007-001
+Finder 10.4.7
+iTunes 1.0
+Time Machine 1.0.2
+Safari 1.0
+Dashboard 1.0.1
+iWeb 1.0
+Mail 1.0.1
+iPhoto 1.0
+System Preferences 1.0
+iChat 1.0
+Preview 1.0
+</textarea>
+</center>
+
+</td>
+<td width=14 valign=top align=left background="Resources/panel_e.png"></td>
+</tr>
+
+<tr>
+<td width=14 height=14 valign=top align=left><img src="Resources/panel_sw.png"></td>
+<td height=14 valign=top align=left background="Resources/panel_s.png"></td>
+<td width=14 height=14 valign=top align=left><img src="Resources/panel_se.png"></td>
+</tr>
+</table>
+
+</div>
+
+</td>
+
+<td valign=middle align=left width=10></td>
+</tr>
+</table>
+
+</body>
+
+</html>
