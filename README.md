@@ -7,4 +7,8 @@
 
 # Émulateurs
 
-👉 [Mac OS](https://n0ub4x.github.io/Multage/Emulateur/Mac%20OS/) 👈
+👉 [Android]([https://n0ub4x.github.io/Multage/Emulateur/Mac%20OS/](https://android.blueedge.me/)) 👈
+
+👉 [Mac OS Mercury](https://n0ub4x.github.io/Multage/Emulateur/Mac%20OS/) 👈
+
+👉 Windows [11](https://win11.blueedge.me/) 👈
