@@ -7,4 +7,4 @@
 
 # Émulateurs
 
-👉 [Mac OS](https://n0ub4x.github.io/Multage/Emulateur/Mac OS/) 👈
+👉 [Mac OS](https://n0ub4x.github.io/Multage/Emulateur/Mac%20OS/) 👈
