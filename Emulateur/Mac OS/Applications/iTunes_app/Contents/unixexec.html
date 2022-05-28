@@ -1,0 +1,895 @@
+<html>
+
+<head>
+<title>Mercury iTunes</title>
+
+
+<!-- iTunes has gone Gold. Don't change the code. -->
+
+
+<script>
+
+function setvars() {
+	var currenttrack = 00;
+	var skipforward = no;
+	var skiprewind = no;
+}
+
+<!-- Play selected song -->
+
+function EvalSound(soundobj) {
+	var thissound=document.getElementById(soundobj);
+  	thissound.Play();
+}
+
+function StopSound(soundobj) {
+	var thissound=document.getElementById(soundobj);
+  	thissound.Stop();
+}
+
+
+
+<!-- Functions for selecting a specific song and enabling the play button to play it then. -->
+<!-- Determining which track is selected is based Finder sidebar code -->
+
+function select_track01() {
+	document.getElementById("trackrow01").style.backgroundImage = 'url(Resources/track-selected-back.png)';
+	document.getElementById("trackname01").style.color =  "#FFFFFF";
+	document.getElementById("PlayButton").src = "Resources/button_play.png";
+	currenttrack = 01;
+	
+	document.getElementById("trackrow02").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname02").style.color =  "#000000";
+	
+	document.getElementById("trackrow03").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname03").style.color =  "#000000";
+	
+	document.getElementById("trackrow04").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname04").style.color =  "#000000";
+	
+	document.getElementById("trackrow05").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname05").style.color =  "#000000";
+	
+	document.getElementById("trackrow06").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname06").style.color =  "#000000";
+	
+	document.getElementById("trackrow07").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname07").style.color =  "#000000";
+	
+	document.getElementById("trackrow08").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname08").style.color =  "#000000";
+	
+	document.getElementById("trackrow09").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname09").style.color =  "#000000";
+}
+
+
+function select_track02() {
+	document.getElementById("trackrow01").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname01").style.color =  "#000000";
+	
+	document.getElementById("trackrow02").style.backgroundImage = 'url(Resources/track-selected-back.png)';
+	document.getElementById("trackname02").style.color =  "#FFFFFF";
+	document.getElementById("PlayButton").src = "Resources/button_play.png";
+	currenttrack = 02;
+	
+	document.getElementById("trackrow03").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname03").style.color =  "#000000";
+	
+	document.getElementById("trackrow04").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname04").style.color =  "#000000";
+	
+	document.getElementById("trackrow05").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname05").style.color =  "#000000";
+	
+	document.getElementById("trackrow06").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname06").style.color =  "#000000";
+	
+	document.getElementById("trackrow07").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname07").style.color =  "#000000";
+	
+	document.getElementById("trackrow08").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname08").style.color =  "#000000";
+	
+	document.getElementById("trackrow09").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname09").style.color =  "#000000";
+}
+
+
+function select_track03() {
+	document.getElementById("trackrow01").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname01").style.color =  "#000000";
+	
+	document.getElementById("trackrow02").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname02").style.color =  "#000000";
+	
+	document.getElementById("trackrow03").style.backgroundImage = 'url(Resources/track-selected-back.png)';
+	document.getElementById("trackname03").style.color =  "#FFFFFF";
+	document.getElementById("PlayButton").src = "Resources/button_play.png";
+	currenttrack = 03;
+	
+	document.getElementById("trackrow04").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname04").style.color =  "#000000";
+	
+	document.getElementById("trackrow05").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname05").style.color =  "#000000";
+	
+	document.getElementById("trackrow06").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname06").style.color =  "#000000";
+	
+	document.getElementById("trackrow07").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname07").style.color =  "#000000";
+	
+	document.getElementById("trackrow08").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname08").style.color =  "#000000";
+	
+	document.getElementById("trackrow09").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname09").style.color =  "#000000";
+}
+
+
+function select_track04() {
+	document.getElementById("trackrow01").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname01").style.color =  "#000000";
+	
+	document.getElementById("trackrow02").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname02").style.color =  "#000000";
+	
+	document.getElementById("trackrow03").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname03").style.color =  "#000000";
+	
+	document.getElementById("trackrow04").style.backgroundImage = 'url(Resources/track-selected-back.png)';
+	document.getElementById("trackname04").style.color =  "#FFFFFF";
+	document.getElementById("PlayButton").src = "Resources/button_play.png";
+	currenttrack = 04;
+	
+	document.getElementById("trackrow05").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname05").style.color =  "#000000";
+	
+	document.getElementById("trackrow06").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname06").style.color =  "#000000";
+	
+	document.getElementById("trackrow07").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname07").style.color =  "#000000";
+	
+	document.getElementById("trackrow08").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname08").style.color =  "#000000";
+	
+	document.getElementById("trackrow09").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname09").style.color =  "#000000";
+}
+
+
+function select_track05() {
+	document.getElementById("trackrow01").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname01").style.color =  "#000000";
+	
+	document.getElementById("trackrow02").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname02").style.color =  "#000000";
+	
+	document.getElementById("trackrow03").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname03").style.color =  "#000000";
+	
+	document.getElementById("trackrow04").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname04").style.color =  "#000000";
+	
+	document.getElementById("trackrow05").style.backgroundImage = 'url(Resources/track-selected-back.png)';
+	document.getElementById("trackname05").style.color =  "#FFFFFF";
+	document.getElementById("PlayButton").src = "Resources/button_play.png";
+	currenttrack = 05;
+	
+	document.getElementById("trackrow06").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname06").style.color =  "#000000";
+	
+	document.getElementById("trackrow07").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname07").style.color =  "#000000";
+	
+	document.getElementById("trackrow08").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname08").style.color =  "#000000";
+	
+	document.getElementById("trackrow09").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname09").style.color =  "#000000";
+}
+
+
+function select_track06() {
+	document.getElementById("trackrow01").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname01").style.color =  "#000000";
+	
+	document.getElementById("trackrow02").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname02").style.color =  "#000000";
+	
+	document.getElementById("trackrow03").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname03").style.color =  "#000000";
+	
+	document.getElementById("trackrow04").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname04").style.color =  "#000000";
+	
+	document.getElementById("trackrow05").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname05").style.color =  "#000000";
+	
+	document.getElementById("trackrow06").style.backgroundImage = 'url(Resources/track-selected-back.png)';
+	document.getElementById("trackname06").style.color =  "#FFFFFF";
+	document.getElementById("PlayButton").src = "Resources/button_play.png";
+	currenttrack = 06;
+	
+	document.getElementById("trackrow07").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname07").style.color =  "#000000";
+	
+	document.getElementById("trackrow08").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname08").style.color =  "#000000";
+	
+	document.getElementById("trackrow09").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname09").style.color =  "#000000";
+}
+
+
+function select_track07() {
+	document.getElementById("trackrow01").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname01").style.color =  "#000000";
+	
+	document.getElementById("trackrow02").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname02").style.color =  "#000000";
+	
+	document.getElementById("trackrow03").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname03").style.color =  "#000000";
+	
+	document.getElementById("trackrow04").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname04").style.color =  "#000000";
+	
+	document.getElementById("trackrow05").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname05").style.color =  "#000000";
+	
+	document.getElementById("trackrow06").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname06").style.color =  "#000000";
+	
+	document.getElementById("trackrow07").style.backgroundImage = 'url(Resources/track-selected-back.png)';
+	document.getElementById("trackname07").style.color =  "#FFFFFF";
+	document.getElementById("PlayButton").src = "Resources/button_play.png";
+	currenttrack = 07;
+	
+	document.getElementById("trackrow08").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname08").style.color =  "#000000";
+	
+	document.getElementById("trackrow09").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname09").style.color =  "#000000";
+}
+
+
+function select_track08() {
+	document.getElementById("trackrow01").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname01").style.color =  "#000000";
+	
+	document.getElementById("trackrow02").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname02").style.color =  "#000000";
+	
+	document.getElementById("trackrow03").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname03").style.color =  "#000000";
+	
+	document.getElementById("trackrow04").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname04").style.color =  "#000000";
+	
+	document.getElementById("trackrow05").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname05").style.color =  "#000000";
+	
+	document.getElementById("trackrow06").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname06").style.color =  "#000000";
+	
+	document.getElementById("trackrow07").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname07").style.color =  "#000000";
+	
+	document.getElementById("trackrow08").style.backgroundImage = 'url(Resources/track-selected-back.png)';
+	document.getElementById("trackname08").style.color =  "#FFFFFF";
+	document.getElementById("PlayButton").src = "Resources/button_play.png";
+	currenttrack = 08;
+	
+	document.getElementById("trackrow09").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname09").style.color =  "#000000";
+}
+
+
+function select_track09() {
+	document.getElementById("trackrow01").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname01").style.color =  "#000000";
+	
+	document.getElementById("trackrow02").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname02").style.color =  "#000000";
+	
+	document.getElementById("trackrow03").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname03").style.color =  "#000000";
+	
+	document.getElementById("trackrow04").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname04").style.color =  "#000000";
+	
+	document.getElementById("trackrow05").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname05").style.color =  "#000000";
+	
+	document.getElementById("trackrow06").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname06").style.color =  "#000000";
+	
+	document.getElementById("trackrow07").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname07").style.color =  "#000000";
+	
+	document.getElementById("trackrow08").style.backgroundImage = 'url(Resources/transparent.png)';
+	document.getElementById("trackname08").style.color =  "#000000";
+	
+	document.getElementById("trackrow09").style.backgroundImage = 'url(Resources/track-selected-back.png)';
+	document.getElementById("trackname09").style.color =  "#FFFFFF";
+	document.getElementById("PlayButton").src = "Resources/button_play.png";
+	currenttrack = 09;
+}
+
+
+
+
+
+
+<!-- Define track information to display when a song is playing, and play it goddamnit! =) -->
+
+function StopPlaying() {
+	StopSound('track01');
+	StopSound('track02');
+	StopSound('track03');
+	StopSound('track04');
+	StopSound('track05');
+	StopSound('track06');
+	StopSound('track07');
+	StopSound('track08');
+	StopSound('track09');
+	document.getElementById("display_current_trackname").innerHTML = "<font face='Lucida Grande, Tahoma' size=1>No song selected to play.</font>";
+}
+
+
+function NextTrack() {
+	
+	StopPlaying();
+
+<!-- DO NOT NOT NOT MESS AROUND WITH THE INVERSED ASSIGNMENT OF TRACKS!!! I WAS A MORON. -->
+	
+	if(currenttrack == "08") {
+		select_track09();
+		trackdisplay();
+	}
+	if(currenttrack == "07") {
+		select_track08();
+		trackdisplay();
+	}
+	if(currenttrack == "06") {
+		select_track07();
+		trackdisplay();
+	}
+	if(currenttrack == "05") {
+		select_track06();
+		trackdisplay();
+	}
+	if(currenttrack == "04") {
+		select_track05();
+		trackdisplay();
+	}
+	if(currenttrack == "03") {
+		select_track04();
+		trackdisplay();
+	}
+	if(currenttrack == "02") {
+		select_track03();
+		trackdisplay();
+	}
+	if(currenttrack == "01") {
+		select_track02();
+		trackdisplay();
+	}
+}
+
+
+function PreviousTrack() {
+	
+	StopPlaying();
+	
+	if(currenttrack == "02") {
+		select_track01();
+		trackdisplay();
+	}
+	if(currenttrack == "03") {
+		select_track02();
+		trackdisplay();
+	}
+	if(currenttrack == "04") {
+		select_track03();
+		trackdisplay();
+	}
+	if(currenttrack == "05") {
+		select_track04();
+		trackdisplay();
+	}
+	if(currenttrack == "06") {
+		select_track05();
+		trackdisplay();
+	}
+	if(currenttrack == "07") {
+		select_track06();
+		trackdisplay();
+	}
+	if(currenttrack == "08") {
+		select_track07();
+		trackdisplay();
+	}
+	if(currenttrack == "09") {
+		select_track08();
+		trackdisplay();
+	}
+}
+
+
+function trackdisplay() {
+		
+	if(currenttrack == "01") {
+		EvalSound('track01');
+		StopSound('track02');
+		StopSound('track03');
+		StopSound('track04');
+		StopSound('track05');
+		StopSound('track06');
+		StopSound('track07');
+		StopSound('track08');
+		StopSound('track09');
+		skipforward = "yes";
+		skiprewind = "no";
+		document.getElementById("display_current_trackname").innerHTML = "<font face='Lucida Grande, Tahoma' size=1>Now Playing:<br><b>Ignition</b></font>";
+		document.getElementById("StopButton").src = "Resources/button_stop.png";
+	}
+	if(currenttrack == "02") {
+		StopSound('track01');
+		EvalSound('track02');
+		StopSound('track03');
+		StopSound('track04');
+		StopSound('track05');
+		StopSound('track06');
+		StopSound('track07');
+		StopSound('track08');
+		StopSound('track09');
+		skipforward = "yes";
+		skiprewind = "yes";
+		document.getElementById("display_current_trackname").innerHTML = "<font face='Lucida Grande, Tahoma' size=1>Now Playing:<br><b>TranceMission</b></font>";
+		document.getElementById("StopButton").src = "Resources/button_stop.png";
+	}
+	if(currenttrack == "03") {
+		StopSound('track01');
+		StopSound('track02');
+		EvalSound('track03');
+		StopSound('track04');
+		StopSound('track05');
+		StopSound('track06');
+		StopSound('track07');
+		StopSound('track08');
+		StopSound('track09');
+		skipforward = "yes";
+		skiprewind = "yes";
+		document.getElementById("display_current_trackname").innerHTML = "<font face='Lucida Grande, Tahoma' size=1>Now Playing:<br><b>I Take You Higher</b></font>";
+		document.getElementById("StopButton").src = "Resources/button_stop.png";
+	}
+	if(currenttrack == "04") {
+		StopSound('track01');
+		StopSound('track02');
+		StopSound('track03');
+		EvalSound('track04');
+		StopSound('track05');
+		StopSound('track06');
+		StopSound('track07');
+		StopSound('track08');
+		StopSound('track09');
+		skipforward = "yes";
+		skiprewind = "yes";
+		document.getElementById("display_current_trackname").innerHTML = "<font face='Lucida Grande, Tahoma' size=1>Now Playing:<br><b>Cubic</b></font>";
+		document.getElementById("StopButton").src = "Resources/button_stop.png";
+	}
+	if(currenttrack == "05") {
+		StopSound('track01');
+		StopSound('track02');
+		StopSound('track03');
+		StopSound('track04');
+		EvalSound('track05');
+		StopSound('track06');
+		StopSound('track07');
+		StopSound('track08');
+		StopSound('track09');
+		skipforward = "yes";
+		skiprewind = "yes";
+		document.getElementById("display_current_trackname").innerHTML = "<font face='Lucida Grande, Tahoma' size=1>Now Playing:<br><b>I Am Going Tonight</b></font>";
+		document.getElementById("StopButton").src = "Resources/button_stop.png";
+	}
+	if(currenttrack == "06") {
+		StopSound('track01');
+		StopSound('track02');
+		StopSound('track03');
+		StopSound('track04');
+		StopSound('track05');
+		EvalSound('track06');
+		StopSound('track07');
+		StopSound('track08');
+		StopSound('track09');
+		skipforward = "yes";
+		skiprewind = "yes";
+		document.getElementById("display_current_trackname").innerHTML = "<font face='Lucida Grande, Tahoma' size=1>Now Playing:<br><b>Rhapsody in E</b></font>";
+		document.getElementById("StopButton").src = "Resources/button_stop.png";
+	}
+	if(currenttrack == "07") {
+		StopSound('track01');
+		StopSound('track02');
+		StopSound('track03');
+		StopSound('track04');
+		StopSound('track05');
+		StopSound('track06');
+		EvalSound('track07');
+		StopSound('track08');
+		StopSound('track09');
+		skipforward = "yes";
+		skiprewind = "yes";
+		document.getElementById("display_current_trackname").innerHTML = "<font face='Lucida Grande, Tahoma' size=1>Now Playing:<br><b>7 Years (94/01)</b></font>";
+		document.getElementById("StopButton").src = "Resources/button_stop.png";
+	}
+	if(currenttrack == "08") {
+		StopSound('track01');
+		StopSound('track02');
+		StopSound('track03');
+		StopSound('track04');
+		StopSound('track05');
+		StopSound('track06');
+		StopSound('track07');
+		EvalSound('track08');
+		StopSound('track09');
+		skipforward = "yes";
+		skiprewind = "yes";
+		document.getElementById("display_current_trackname").innerHTML = "<font face='Lucida Grande, Tahoma' size=1>Now Playing:<br><b>Zebras Crossing Crossing The Street</b></font>";
+		document.getElementById("StopButton").src = "Resources/button_stop.png";
+	}
+	if(currenttrack == "09") {
+		StopSound('track01');
+		StopSound('track02');
+		StopSound('track03');
+		StopSound('track04');
+		StopSound('track05');
+		StopSound('track06');
+		StopSound('track07');
+		StopSound('track08');
+		EvalSound('track09');
+		skipforward = "no";
+		skiprewind = "yes";
+		document.getElementById("display_current_trackname").innerHTML = "<font face='Lucida Grande, Tahoma' size=1>Now Playing:<br><b>Liquid Flute (Beta 2)</b></font>";
+		document.getElementById("StopButton").src = "Resources/button_stop.png";
+	}
+}
+
+function Forward() {
+	if(skipforward == "yes") {
+		document.getElementById("SkipForward").src = "Resources/button_skip.png"; 
+		NextTrack();
+	}
+}
+
+function Rewind() {
+	if(skiprewind == "yes") {
+		document.getElementById("SkipRewind").src = "Resources/button_rewind.png";
+		PreviousTrack();
+	}
+}
+
+function CanISkip() {
+	if(skipforward == "no") {
+		document.getElementById("SkipForward").src = "Resources/button_skip_INA.png";
+	}
+	if(skipforward == "yes") {
+		document.getElementById("SkipForward").src = "Resources/button_skip.png";
+	}
+}
+
+function CanIRewind() {
+	if(skiprewind == "no") {
+		document.getElementById("SkipRewind").src = "Resources/button_rewind_INA.png";
+	}
+	if(skiprewind == "yes") {
+		document.getElementById("SkipRewind").src = "Resources/button_rewind.png";
+	}
+}
+
+
+</script>
+
+
+</head>
+
+<body bgcolor=white background="Resources/toolbar_back.png" marginwidth=0 marginheight=0 onload="setvars()">
+
+<!-- Playlists for each track -->
+
+<embed src="track01.m3u" autostart=false width=1 height=1 id="track01" type="audio/mpeg"></embed><embed src="track02.m3u" autostart=false width=1 height=1 id="track02" type="audio/mpeg"></embed><embed src="track03.m3u" autostart=false width=1 height=1 id="track03" type="audio/mpeg"></embed><embed src="track04.m3u" autostart=false width=1 height=1 id="track04" type="audio/mpeg"></embed><embed src="track05.m3u" autostart=false width=1 height=1 id="track05" type="audio/mpeg"></embed><embed src="track06.m3u" autostart=false width=1 height=1 id="track06" type="audio/mpeg"></embed><embed src="track07.m3u" autostart=false width=1 height=1 id="track07" type="audio/mpeg"></embed><embed src="track08.m3u" autostart=false width=1 height=1 id="track08" type="audio/mpeg"></embed><embed src="track09.m3u" autostart=false width=1 height=1 id="track09" type="audio/mpeg"></embed>
+
+<table width=100% height=55 border=0 cellspacing=0 cellpadding=0 align=center background="Resources/toolbar_back.png">
+
+<tr>
+
+<td width=300 align=left valign=middle>
+
+
+<!-- Control that iTune. -->
+
+<img src="Resources/transparent.png" width=20 height=1><img src="Resources/button_rewind_INA.png" align=middle id="SkipRewind" onclick="Rewind();CanISkip();CanIRewind();"><img src="Resources/transparent.png" width=2 height=1><img src="Resources/button_stop_INA.png" align=middle id="StopButton" onclick="StopPlaying();this.src='Resources/button_stop_INA.png'"><img src="Resources/transparent.png" width=2 height=1><img src="Resources/button_play_INA.png" align=middle onclick="javascript:trackdisplay();CanISkip();CanIRewind();" id="PlayButton"><img src="Resources/transparent.png" width=2 height=1><img src="Resources/button_skip_INA.png" align=middle id="SkipForward" onclick="Forward()">
+
+</td>
+
+<td width=* align=center valign=middle>
+
+
+<!-- Track Display -->
+
+<table width=100% border=0 cellspacing=0 cellpadding=0 align=center>
+<tr>
+<td align=left valign=middle width=6><img src="Resources/trackdisplay_left.png"></td>
+<td align=center valign=middle background="Resources/trackdisplay_middle.png">
+
+<div id="display_current_trackname"><font face="Lucida Grande, Tahoma" size=1>No song selected to play.</font></div>
+
+</td>
+<td align=left valign=middle width=6><img src="Resources/trackdisplay_right.png"></td>
+</tr>
+</table>
+
+
+
+<td width=300 align=right valign=middle>
+
+
+
+</td>
+
+</tr>
+</table>
+
+
+
+<!-- Sidebar with Album info -->
+
+
+<table width=100% height=90% border=0 cellspacing=0 cellpadding=0 background="../../Safari_app/Contents/Resources/list-back.gif">
+<tr>
+<td width=161 valign=top align=left bgcolor="#000000">
+
+<table width=140 border=0 cellspacing=0 cellpadding=0 align=center>
+
+<tr>
+<td valign=left>
+<font face="Lucida Grande, Tahoma" size=1 color=#EEEEEE><br><b>ALBUM</b>
+</td>
+</tr>
+
+<tr>
+<td valign=top align=center><br>
+<img src="Resources/albumart-reflect.jpg"><br>
+</td>
+</tr>
+
+<tr>
+<td valign=top align=center>
+<font face="Lucida Grande, Tahoma" size=1 color=#CCCCCC>
+<b>The Stadium<br>Trancefloor Experience</b>
+</td>
+</tr>
+
+<tr>
+<td valign=left>
+<font face="Lucida Grande, Tahoma" size=1 color=#EEEEEE><br><br><b>MORE INFORMATION</b>
+</td>
+</tr>
+
+<tr>
+<td valign=left>
+<font face="Lucida Grande, Tahoma" size=1 color=#CCCCCC><br>
+Artist: Marc S.<br>
+Label: Homunculus Tunes<br>
+Number of Tracks: 9<br>
+Recorded in: Ireland<br><br>
+
+To listen to a song, select it and press the Play button. To download a song, press the Download button.<br><br>
+
+Notes:<br>
+This audio material (Album) is published under the terms of the HTOML (Homunculus Tunes Open Music License). This means that the the artist has decided to make the recorded material as well as the sources that were used to create the music, openly available for anyone. You can download any of the songs at no cost, redistribute them as much as you like, and modify the sources, as long as you also publish your modifications under the same terms.<br><br>
+
+&copy; 2006 Homunculus Tunes.<br><br>
+</td>
+</tr>
+
+
+</table>
+
+
+</td>
+
+<td valign=top align=left>
+
+
+<!-- Tracklist -->
+
+
+<table width=100% border=0 cellspacing=0 cellpadding=0 align=left>
+
+<tr id="trackrow01" onclick="javascript:select_track01()">
+<td height=64 width=64 valign=middle align=center>
+<img src="Resources/iTunes-mp3.png">
+</td>
+<td width=10></td>
+<td height=64 valign=middle align=left>
+<div id="trackname01"><font face="Lucida Grande, Tahoma" size=2><b>Ignition</b><br>
+<font size=1>The Stadium Trancefloor Experience<br>
+Marc S.
+</font></div>
+</td>
+<td width=30></td>
+<td height=64 valign=middle align=right>
+<a href="../../../Public/01_Ignition.zip"><img src="Resources/downloadbutton.png" border=0 style="cursor:default"></a>
+</td>
+<td width=20></td>
+</tr>
+
+
+<tr id="trackrow02" onclick="javascript:select_track02()">
+<td height=64 width=64 valign=middle align=center>
+<img src="Resources/iTunes-mp3.png">
+</td>
+<td width=10></td>
+<td height=64 valign=middle align=left>
+<div id="trackname02"><font face="Lucida Grande, Tahoma" size=2><b>TranceMission</b><br>
+<font size=1>The Stadium Trancefloor Experience<br>
+Marc S.
+</font></div>
+</td>
+<td width=30></td>
+<td height=64 valign=middle align=right>
+<a href="../../../Public/02_Trancemission.zip"><img src="Resources/downloadbutton.png" border=0 style="cursor:default"></a>
+</td>
+<td width=20></td>
+</tr>
+
+
+<tr id="trackrow03" onclick="javascript:select_track03()">
+<td height=64 width=64 valign=middle align=center>
+<img src="Resources/iTunes-mp3.png">
+</td>
+<td width=10></td>
+<td height=64 valign=middle align=left>
+<div id="trackname03"><font face="Lucida Grande, Tahoma" size=2><b>I Take You Higher</b><br>
+<font size=1>The Stadium Trancefloor Experience<br>
+Marc S.
+</font></div>
+</td>
+<td width=30></td>
+<td height=64 valign=middle align=right>
+<a href="../../../Public/03_I_Take_You_Higher.zip"><img src="Resources/downloadbutton.png" border=0 style="cursor:default"></a>
+</td>
+<td width=20></td>
+</tr>
+
+
+<tr id="trackrow04" onclick="javascript:select_track04()">
+<td height=64 width=64 valign=middle align=center>
+<img src="Resources/iTunes-mp3.png">
+</td>
+<td width=10></td>
+<td height=64 valign=middle align=left>
+<div id="trackname04"><font face="Lucida Grande, Tahoma" size=2><b>Cubic</b><br>
+<font size=1>The Stadium Trancefloor Experience<br>
+Marc S.
+</font></div>
+</td>
+<td width=30></td>
+<td height=64 valign=middle align=right>
+<a href="../../../Public/04_Cubic.zip"><img src="Resources/downloadbutton.png" border=0 style="cursor:default"></a>
+</td>
+<td width=20></td>
+</tr>
+
+
+<tr id="trackrow05" onclick="javascript:select_track05()">
+<td height=64 width=64 valign=middle align=center>
+<img src="Resources/iTunes-mp3.png">
+</td>
+<td width=10></td>
+<td height=64 valign=middle align=left>
+<div id="trackname05"><font face="Lucida Grande, Tahoma" size=2><b>I An Going Tonight</b><br>
+<font size=1>The Stadium Trancefloor Experience<br>
+Marc S.
+</font></div>
+</td>
+<td width=30></td>
+<td height=64 valign=middle align=right>
+<a href="../../../Public/05_I_Am_Going_Tonight_(Extended).zip"><img src="Resources/downloadbutton.png" border=0 style="cursor:default"></a>
+</td>
+<td width=20></td>
+</tr>
+
+
+<tr id="trackrow06" onclick="javascript:select_track06()">
+<td height=64 width=64 valign=middle align=center>
+<img src="Resources/iTunes-mp3.png">
+</td>
+<td width=10></td>
+<td height=64 valign=middle align=left>
+<div id="trackname06"><font face="Lucida Grande, Tahoma" size=2><b>Rhapsody in E</b><br>
+<font size=1>The Stadium Trancefloor Experience<br>
+Marc S.
+</font></div>
+</td>
+<td width=30></td>
+<td height=64 valign=middle align=right>
+<a href="../../../Public/06_Rhapsody_In_E.zip"><img src="Resources/downloadbutton.png" border=0 style="cursor:default"></a>
+</td>
+<td width=20></td>
+</tr>
+
+
+<tr id="trackrow07" onclick="javascript:select_track07()">
+<td height=64 width=64 valign=middle align=center>
+<img src="Resources/iTunes-mp3.png">
+</td>
+<td width=10></td>
+<td height=64 valign=middle align=left>
+<div id="trackname07"><font face="Lucida Grande, Tahoma" size=2><b>7 Years (94/01)</b><br>
+<font size=1>The Stadium Trancefloor Experience<br>
+Marc S.
+</font></div>
+</td>
+<td width=30></td>
+<td height=64 valign=middle align=right>
+<a href="../../../Public/07_7_Years_(94_01).zip"><img src="Resources/downloadbutton.png" border=0 style="cursor:default"></a>
+</td>
+<td width=20></td>
+</tr>
+
+
+<tr id="trackrow08" onclick="javascript:select_track08()">
+<td height=64 width=64 valign=middle align=center>
+<img src="Resources/iTunes-mp3.png">
+</td>
+<td width=10></td>
+<td height=64 valign=middle align=left>
+<div id="trackname08"><font face="Lucida Grande, Tahoma" size=2><b>Zebras Crossing The Street</b><br>
+<font size=1>The Stadium Trancefloor Experience<br>
+Marc S.
+</font></div>
+</td>
+<td width=30></td>
+<td height=64 valign=middle align=right>
+<a href="../../../Public/08_Zebras_Crossing_The_Street.zip"><img src="Resources/downloadbutton.png" border=0 style="cursor:default"></a>
+</td>
+<td width=20></td>
+</tr>
+
+
+<tr id="trackrow09" onclick="javascript:select_track09()">
+<td height=64 width=64 valign=middle align=center>
+<img src="Resources/iTunes-mp3.png">
+</td>
+<td width=10></td>
+<td height=64 valign=middle align=left>
+<div id="trackname09"><font face="Lucida Grande, Tahoma" size=2><b>Liquid Flute (Beta 2)</b><br>
+<font size=1>The Stadium Trancefloor Experience<br>
+Marc S.
+</font></div>
+</td>
+<td width=30></td>
+<td height=64 valign=middle align=right>
+<a href="../../../Public/09_Liquid_Flute.zip"><img src="Resources/downloadbutton.png" border=0 style="cursor:default"></a>
+</td>
+<td width=20></td>
+</tr>
+
+
+</table>
+
+
+</td>
+
+
+</tr>
+</table>
+
+</body>
+</html>
