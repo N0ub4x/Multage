@@ -1,0 +1,98 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Mail for Mercury. It strips the slashes.</title>
+<!-- TinyMCE -->
+<script language="javascript" type="text/javascript" src="../jscripts/tiny_mce/tiny_mce.js"></script>
+<script language="javascript" type="text/javascript">
+	tinyMCE.init({
+		mode : "textareas",
+		theme : "advanced",
+		plugins : "table,advhr,advimage,advlink,emotions,iespell,insertdatetime,preview,zoom,media,searchreplace,print,contextmenu,paste,directionality",
+		theme_advanced_buttons1_add_before : "newdocument,separator",
+		theme_advanced_buttons1_add : "fontselect,fontsizeselect",
+		theme_advanced_buttons2_add : "separator,insertdate,inserttime,preview,zoom,separator,forecolor,backcolor",
+		theme_advanced_buttons2_add_before: "cut,copy,paste,pastetext,pasteword,separator,search,replace,separator",
+		theme_advanced_buttons3_add_before : "tablecontrols,separator",
+		theme_advanced_buttons3_add : "emotions,iespell,media,advhr,separator,print,separator,ltr,rtl,separator",
+		theme_advanced_toolbar_location : "top",
+		theme_advanced_toolbar_align : "left",
+		theme_advanced_statusbar_location : "",
+		content_css : "mail.css",
+	    plugi2n_insertdate_dateFormat : "%Y-%m-%d",
+	    plugi2n_insertdate_timeFormat : "%H:%M:%S",
+		paste_use_dialog : false,
+		theme_advanced_resizing : true,
+		theme_advanced_resize_horizontal : false,
+		theme_advanced_link_targets : "",
+		paste_auto_cleanup_on_paste : true,
+		paste_convert_headers_to_strong : false,
+		paste_strip_class_attributes : "all",
+		paste_remove_spans : false,
+		paste_remove_styles : false		
+	});
+
+</script>
+
+</head>
+
+<body marginheight=0 marginwidth=0>
+
+<form onsubmit="upd()" method="post" action="mail.php">
+
+<table height=75 width=100% border=0 cellspacing=0 cellpadding=0 background="../../Resources/mailbar_back.png">
+
+<tr>
+
+<td width=25>
+</td>
+
+<td width=35 valign=middle align=right>
+<font face="Lucida Grande, Tahoma" size=2>To:
+</td>
+
+<td width=10>
+</td>
+
+<td valign=middle align=left>
+<input type="text" name="recipient" style="width:100%; border: 1px solid grey" onclick="this.value='';" value="Whom you want to send an email">
+</td>
+
+<td width=10>
+</td>
+
+<td width=45 valign=middle align=right>
+<input type="image" src="../../Resources/button_send.png" value="Submit" alt="Send the mail" style="cursor:default;">
+</td>
+
+</tr>
+
+<tr>
+
+<td width=25>
+</td>
+
+<td width=35 valign=middle align=right>
+<font face="Lucida Grande, Tahoma" size=2>Subject:
+</td>
+
+<td width=10>
+</td>
+
+<td valign=middle align=left colspan=4>
+<input type="text" name="subject_line" style="width:100%; border: 1px solid grey">
+</td>
+
+<td width=25>
+</td>
+
+</tr>
+
+</table>
+
+<textarea id="elm1" name="elm1" rows="15" cols="80" style="width: 100%; height:423px;">
+</textarea>
+
+</form>
+
+</body>
+</html>
