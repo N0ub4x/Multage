@@ -16,6 +16,7 @@ function moonlight_finder() {
 <!-- Drop down menu on cog wheel menu -->
 <script type="text/javascript" src="MacOS/dropdown.js"></script>
 
+
 <script type="text/javascript">
 
 var SelectedItem = "0";
@@ -261,11 +262,11 @@ at_attach("gomenu_parent", "gomenu_child", "click", "y", "pointer");
 <img src="Resources/finderbar-back.gif"><br>
 
 <a style="cursor: default;" onclick="select_home()" href="finder_home_content.html" target="FinderFileView"><img border=0 id="finderbar_home" src="Resources/09_Home.gif"></a><br>
-<a style="cursor: default;" onclick="select_applications()" href="../../../../Applications/applist_kext.html" target="FinderFileView"><img border=0 id="finderbar_applications" src="Resources/03_Applications.gif"></a><br>
+<a style="cursor: default;" onclick="select_applications()" href="../../../../Applications/applist_kext.html" target="FinderFileView"><img border=0 id="finderbar_applications" src="Resources/03_Applications_selected.gif"></a><br>
 <a style="cursor: default;" onclick="select_desktop()" href="finder_desktop_content.html" target="FinderFileView"><img border=0 id="finderbar_desktop" src="Resources/04_Desktop.gif"></a><br>
 <a style="cursor: default;" onclick="select_documents()" href="finder_documents_content.html" target="FinderFileView"><img border=0 id="finderbar_documents" src="Resources/05_Documents.gif"></a><br>
 <a style="cursor: default;" onclick="select_music()" href="finder_music_content.html" target="FinderFileView"><img border=0 id="finderbar_music" src="Resources/07_Music.gif"></a><br>
-<a style="cursor: default;" onclick="select_pictures()" href="finder_pictures_content.html" target="FinderFileView"><img border=0 id="finderbar_pictures" src="Resources/08_Pictures_selected.gif"></a><br>
+<a style="cursor: default;" onclick="select_pictures()" href="finder_pictures_content.html" target="FinderFileView"><img border=0 id="finderbar_pictures" src="Resources/08_Pictures.gif"></a><br>
 
 </td>
 
@@ -275,7 +276,7 @@ at_attach("gomenu_parent", "gomenu_child", "click", "y", "pointer");
 
 <td width=* height=100% bgcolor=#FFFFFF valign=top align=left>
 
-<iframe src="finder_pictures_content.html" width=100% height=100% name="FinderFileView" id="FinderFileView" frameborder=0 scrolling=auto></iframe>
+<iframe src="../../../../Applications/applist_kext.html" width=100% height=100% name="FinderFileView" id="FinderFileView" frameborder=0 scrolling=auto></iframe>
 
 </td>
 

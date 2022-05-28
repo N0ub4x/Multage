@@ -3,6 +3,12 @@
 <head>
 <title>Contents of home directory</title>
 
+
+<!-- Moonlight search within the Finder. I'd say: COOL!! -->
+<!-- First appearence: Build 1M1204 -->
+
+<script src="toolbar.js"></script>
+
 <script type="text/javascript">
 
 function moonlight_finder() {
@@ -13,8 +19,11 @@ function moonlight_finder() {
 
 </script>
 
+
 <!-- Drop down menu on cog wheel menu -->
 <script type="text/javascript" src="MacOS/dropdown.js"></script>
+
+
 
 <script type="text/javascript">
 
@@ -167,6 +176,7 @@ function select_home() {
 a:link {cursor: default}
 </style>
 
+
 </head>
 
 <body bgcolor=#FFFFFF marginwidth=0 marginheight=0 oncontextmenu="return false;">
@@ -223,7 +233,7 @@ at_attach("gomenu_parent", "gomenu_child", "click", "y", "pointer");
 <td valign=top align=left width=24><img src="Resources/spotlight-finder-left.gif"></td>
 
 <td width=163 valign=middle align=left background="Resources/spotlight-finder-middle.gif">
-<input style="border: 0px;" onkeyup="moonlight_finder()" id="spotlight_search" name="spotlight" type="text" size="26" maxlength="200">
+<input style="border: 0px;" id="spotlight_search" onkeyup="moonlight_finder()" name="spotlight" type="text" size="26" maxlength="200">
 </td>
 
 <td width=10><img src="Resources/spotlight-finder-right.gif"></td>
@@ -253,8 +263,8 @@ at_attach("gomenu_parent", "gomenu_child", "click", "y", "pointer");
 <img src="Resources/Finderbar_DEVICES.gif"><br>
 <img src="Resources/finderbar-back.gif"><br>
 
-<a style="cursor: default;" onclick="select_network()" href="../../../../Applications/Safari_app/Contents/networklist_finder.html" target="FinderFileView"><img border=0 id="finderbar_network" src="Resources/01_Network_selected.gif"></a><br>
-<a style="cursor: default;" onclick="select_machd()" href="finder_mercuryhd_content.html" target="FinderFileView"><img border=0 id="finderbar_machd" src="Resources/02_MacHD.gif"></a><br><br>
+<a style="cursor: default;" onclick="select_network()" href="../../../../Applications/Safari_app/Contents/networklist_finder.html" target="FinderFileView"><img border=0 id="finderbar_network" src="Resources/01_Network.gif"></a><br>
+<a style="cursor: default;" onclick="select_machd()" href="finder_mercuryhd_content.html" target="FinderFileView"><img border=0 id="finderbar_machd" src="Resources/02_MacHD_Selected.gif"></a><br><br>
 
 <img src="Resources/finderbar-back.gif"><br>
 <img src="Resources/Finderbar_PLACES.gif"><br>
@@ -266,7 +276,6 @@ at_attach("gomenu_parent", "gomenu_child", "click", "y", "pointer");
 <a style="cursor: default;" onclick="select_documents()" href="finder_documents_content.html" target="FinderFileView"><img border=0 id="finderbar_documents" src="Resources/05_Documents.gif"></a><br>
 <a style="cursor: default;" onclick="select_music()" href="finder_music_content.html" target="FinderFileView"><img border=0 id="finderbar_music" src="Resources/07_Music.gif"></a><br>
 <a style="cursor: default;" onclick="select_pictures()" href="finder_pictures_content.html" target="FinderFileView"><img border=0 id="finderbar_pictures" src="Resources/08_Pictures.gif"></a><br>
-
 </td>
 
 
@@ -275,7 +284,7 @@ at_attach("gomenu_parent", "gomenu_child", "click", "y", "pointer");
 
 <td width=* height=100% bgcolor=#FFFFFF valign=top align=left>
 
-<iframe src="../../../../Applications/Safari_app/Contents/networklist_finder.html" width=100% height=100% name="FinderFileView" id="FinderFileView" frameborder=0 scrolling=auto></iframe>
+<iframe src="finder_mercuryhd_content.html" width=100% height=100% name="FinderFileView" id="FinderFileView" frameborder=0 scrolling=auto></iframe>
 
 </td>
 
