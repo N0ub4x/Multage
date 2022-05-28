@@ -11,6 +11,6 @@
 
 👉 [Mac OS Mercury](https://n0ub4x.github.io/Multage/Emulateur/Mac%20OS/) 👈
 
-👉 [Ubuntu](https://www.onworks.net/runos/start-os.html?home=init&os=ubuntu-20.04.1-desktop) 👈
+👉 [Ubuntu](https://www.onworks.net/os-distributions/ubuntu-based/free-ubuntu-online-version-20) 👈
 
 👉 Windows [10](https://mindows.netlify.app/) / [11](https://win11.blueedge.me/) 👈
