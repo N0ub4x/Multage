@@ -1,0 +1,291 @@
+<html>
+
+<head>
+<title>Contents of home directory</title>
+
+<script type="text/javascript">
+
+function moonlight_finder() {
+	var criteria = document.getElementById('spotlight_search').value;
+	document.getElementById('FinderFileView').src = "../../Moonlight_app/Contents/MacOS/moonlight_results.html?d=" + criteria;
+	select_none();
+}
+
+</script>
+
+<!-- Drop down menu on cog wheel menu -->
+<script type="text/javascript" src="MacOS/dropdown.js"></script>
+
+<script type="text/javascript">
+
+var SelectedItem = "0";
+
+function select_none() {
+	if (SelectedItem != "Network") {
+		document.getElementById("finderbar_network").src = "Resources/01_Network.gif";
+		document.getElementById("finderbar_machd").src = "Resources/02_MacHD.gif";
+		document.getElementById("finderbar_applications").src = "Resources/03_Applications.gif";
+		document.getElementById("finderbar_desktop").src = "Resources/04_Desktop.gif";
+		document.getElementById("finderbar_documents").src = "Resources/05_Documents.gif";
+		document.getElementById("finderbar_music").src = "Resources/07_Music.gif";
+		document.getElementById("finderbar_pictures").src = "Resources/08_Pictures.gif";
+		document.getElementById("finderbar_home").src = "Resources/09_Home.gif";
+		var SelectedItem = "0";
+	}
+}
+
+function select_network() {
+	if (SelectedItem != "Network") {
+		document.getElementById("finderbar_network").src = "Resources/01_Network_Selected.gif";
+		document.getElementById("finderbar_machd").src = "Resources/02_MacHD.gif";
+		document.getElementById("finderbar_applications").src = "Resources/03_Applications.gif";
+		document.getElementById("finderbar_desktop").src = "Resources/04_Desktop.gif";
+		document.getElementById("finderbar_documents").src = "Resources/05_Documents.gif";
+		document.getElementById("finderbar_music").src = "Resources/07_Music.gif";
+		document.getElementById("finderbar_pictures").src = "Resources/08_Pictures.gif";
+		document.getElementById("finderbar_home").src = "Resources/09_Home.gif";
+		var SelectedItem = "0";
+	}
+}
+
+function select_machd() {
+	if (SelectedItem != "MacHD") {
+		document.getElementById("finderbar_network").src = "Resources/01_Network.gif";
+		document.getElementById("finderbar_machd").src = "Resources/02_MacHD_Selected.gif";
+		document.getElementById("finderbar_applications").src = "Resources/03_Applications.gif";
+		document.getElementById("finderbar_desktop").src = "Resources/04_Desktop.gif";
+		document.getElementById("finderbar_documents").src = "Resources/05_Documents.gif";
+		document.getElementById("finderbar_music").src = "Resources/07_Music.gif";
+		document.getElementById("finderbar_pictures").src = "Resources/08_Pictures.gif";
+		document.getElementById("finderbar_home").src = "Resources/09_Home.gif";
+		var SelectedItem = "0";
+	}
+}
+
+function select_applications() {
+	if (SelectedItem != "Applications") {
+		document.getElementById("finderbar_network").src = "Resources/01_Network.gif";
+		document.getElementById("finderbar_machd").src = "Resources/02_MacHD.gif";
+		document.getElementById("finderbar_applications").src = "Resources/03_Applications_Selected.gif";
+		document.getElementById("finderbar_desktop").src = "Resources/04_Desktop.gif";
+		document.getElementById("finderbar_documents").src = "Resources/05_Documents.gif";
+		document.getElementById("finderbar_music").src = "Resources/07_Music.gif";
+		document.getElementById("finderbar_pictures").src = "Resources/08_Pictures.gif";
+		document.getElementById("finderbar_home").src = "Resources/09_Home.gif";
+		var SelectedItem = "0";
+	}
+}
+
+function select_desktop() {
+	if (SelectedItem != "Desktop") {
+		document.getElementById("finderbar_network").src = "Resources/01_Network.gif";
+		document.getElementById("finderbar_machd").src = "Resources/02_MacHD.gif";
+		document.getElementById("finderbar_applications").src = "Resources/03_Applications.gif";
+		document.getElementById("finderbar_desktop").src = "Resources/04_Desktop_Selected.gif";
+		document.getElementById("finderbar_documents").src = "Resources/05_Documents.gif";
+		document.getElementById("finderbar_music").src = "Resources/07_Music.gif";
+		document.getElementById("finderbar_pictures").src = "Resources/08_Pictures.gif";
+		document.getElementById("finderbar_home").src = "Resources/09_Home.gif";
+		var SelectedItem = "0";
+	}
+}
+
+function select_documents() {
+	if (SelectedItem != "Documents") {
+		document.getElementById("finderbar_network").src = "Resources/01_Network.gif";
+		document.getElementById("finderbar_machd").src = "Resources/02_MacHD.gif";
+		document.getElementById("finderbar_applications").src = "Resources/03_Applications.gif";
+		document.getElementById("finderbar_desktop").src = "Resources/04_Desktop.gif";
+		document.getElementById("finderbar_documents").src = "Resources/05_Documents_Selected.gif";
+		document.getElementById("finderbar_music").src = "Resources/07_Music.gif";
+		document.getElementById("finderbar_pictures").src = "Resources/08_Pictures.gif";
+		document.getElementById("finderbar_home").src = "Resources/09_Home.gif";
+		var SelectedItem = "0";
+	}
+}
+
+function select_movies() {
+	if (SelectedItem != "Movies") {
+		document.getElementById("finderbar_network").src = "Resources/01_Network.gif";
+		document.getElementById("finderbar_machd").src = "Resources/02_MacHD.gif";
+		document.getElementById("finderbar_applications").src = "Resources/03_Applications.gif";
+		document.getElementById("finderbar_desktop").src = "Resources/04_Desktop.gif";
+		document.getElementById("finderbar_documents").src = "Resources/05_Documents.gif";
+		document.getElementById("finderbar_music").src = "Resources/07_Music.gif";
+		document.getElementById("finderbar_pictures").src = "Resources/08_Pictures.gif";
+		document.getElementById("finderbar_home").src = "Resources/09_Home.gif";
+		var SelectedItem = "0";
+	}
+}
+
+function select_music() {
+	if (SelectedItem != "Movies") {
+		document.getElementById("finderbar_network").src = "Resources/01_Network.gif";
+		document.getElementById("finderbar_machd").src = "Resources/02_MacHD.gif";
+		document.getElementById("finderbar_applications").src = "Resources/03_Applications.gif";
+		document.getElementById("finderbar_desktop").src = "Resources/04_Desktop.gif";
+		document.getElementById("finderbar_documents").src = "Resources/05_Documents.gif";
+		document.getElementById("finderbar_music").src = "Resources/07_Music_Selected.gif";
+		document.getElementById("finderbar_pictures").src = "Resources/08_Pictures.gif";
+		document.getElementById("finderbar_home").src = "Resources/09_Home.gif";
+		var SelectedItem = "0";
+	}
+}
+
+function select_pictures() {
+	if (SelectedItem != "Pictures") {
+		document.getElementById("finderbar_network").src = "Resources/01_Network.gif";
+		document.getElementById("finderbar_machd").src = "Resources/02_MacHD.gif";
+		document.getElementById("finderbar_applications").src = "Resources/03_Applications.gif";
+		document.getElementById("finderbar_desktop").src = "Resources/04_Desktop.gif";
+		document.getElementById("finderbar_documents").src = "Resources/05_Documents.gif";
+		document.getElementById("finderbar_music").src = "Resources/07_Music.gif";
+		document.getElementById("finderbar_pictures").src = "Resources/08_Pictures_Selected.gif";
+		document.getElementById("finderbar_home").src = "Resources/09_Home.gif";
+		var SelectedItem = "0";
+	}
+}
+
+function select_home() {
+	if (SelectedItem != "Home") {
+		document.getElementById("finderbar_network").src = "Resources/01_Network.gif";
+		document.getElementById("finderbar_machd").src = "Resources/02_MacHD.gif";
+		document.getElementById("finderbar_applications").src = "Resources/03_Applications.gif";
+		document.getElementById("finderbar_desktop").src = "Resources/04_Desktop.gif";
+		document.getElementById("finderbar_documents").src = "Resources/05_Documents.gif";
+		document.getElementById("finderbar_music").src = "Resources/07_Music.gif";
+		document.getElementById("finderbar_pictures").src = "Resources/08_Pictures.gif";
+		document.getElementById("finderbar_home").src = "Resources/09_Home_Selected.gif";
+		var SelectedItem = "0";
+	}
+}
+
+</script>
+
+
+<style>
+a:link {cursor: default}
+</style>
+
+</head>
+
+<body bgcolor=#FFFFFF marginwidth=0 marginheight=0 oncontextmenu="return false;">
+
+
+<!-- Toolbar -->
+
+<table width=100% height=100% cellpadding=0 cellspacing=0 border=0>
+<tr>
+
+<td colspan=2 valign=top align=left>
+
+<table height=30 width=100% border=0 cellspacing=0 cellpadding=0>
+<tr>
+
+<td width=8 valign=top align=left background="Resources/toolbar_back.png" ></td>
+<td width=55 height=30 background="Resources/toolbar_back.png" align=left valign=middle>
+
+<nobr><a style="cursor: default;" href="javascript:history.back()" target="FinderFileView"><img border=0 src="Resources/button_back.gif"></a><a style="cursor: default;" href="javascript:history.forward()" target="FinderFileView"><img border=0 src="Resources/button_forward.gif"></a>&nbsp;&nbsp;</nobr>
+
+</td>
+
+<td width=* height=30 background="Resources/toolbar_back.png" align=left valign=top>
+<div id="gomenu_parent"><img src="Resources/button_settings.gif" style="cursor: default"></div>
+
+<div id="gomenu_child" style="visibility: hidden; z-index:1000000">
+
+<img src="Resources/Menus/04-GoMenu/00_MenuTop.png"><br>
+
+<a href="finder_mercuryhd_content.html" onclick="select_machd();" target="FinderFileView" style="cursor:default;"><img src="Resources/Menus/04-GoMenu/01-MercuryHD.png" onmouseover="this.src='Resources/Menus/04-GoMenu/01-MercuryHD_Sel.png'" onmouseout="this.src='Resources/Menus/04-GoMenu/01-MercuryHD.png'" border=0></a><br>
+
+<a href="finder_home_content.html" onclick="select_home();" target="FinderFileView" style="cursor:default;"><img src="Resources/Menus/04-GoMenu/02-Home.png" onmouseover="this.src='Resources/Menus/04-GoMenu/02-Home_Sel.png'" onmouseout="this.src='Resources/Menus/04-GoMenu/02-Home.png'" border=0></a><br>
+
+<a href="../../../../Applications/Safari_app/Contents/networklist_finder.html" onclick="select_network();" target="FinderFileView" style="cursor:default;"><img src="Resources/Menus/04-GoMenu/03-Network.png"  onmouseover="this.src='Resources/Menus/04-GoMenu/03-Network_Sel.png'" onmouseout="this.src='Resources/Menus/04-GoMenu/03-Network.png'" border=0></a><br>
+
+<a href="../../../../Applications/applist_kext.html" onclick="select_applications();" target="FinderFileView" style="cursor:default;"><img src="Resources/Menus/04-GoMenu/04-Applications.png" onmouseover="this.src='Resources/Menus/04-GoMenu/04-Applications_Sel.png'" onmouseout="this.src='Resources/Menus/04-GoMenu/04-Applications.png'" border=0></a><br>
+
+<img src="Resources/Menus/04-GoMenu/99_MenuBottom.png"><br>
+
+</div>
+
+<script type="text/javascript">
+at_attach("gomenu_parent", "gomenu_child", "click", "y", "pointer");
+</script>
+</td>
+
+
+<td width=* height=30 background="Resources/toolbar_back.png" align=right valign=middle>
+
+<!-- Spotlight. Find anything instantly. -->
+
+<table width=201 height=22 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td valign=top align=left width=24><img src="Resources/spotlight-finder-left.gif"></td>
+
+<td width=163 valign=middle align=left background="Resources/spotlight-finder-middle.gif">
+<input style="border: 0px;" onkeyup="moonlight_finder()" id="spotlight_search" name="spotlight" type="text" size="26" maxlength="200">
+</td>
+
+<td width=10><img src="Resources/spotlight-finder-right.gif"></td>
+
+</tr>
+</table>
+
+</td>
+
+<td width=15 background="Resources/toolbar_back.png"></td>
+
+</tr>
+</table>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<!-- Finderbar -->
+
+<td width=161 height=100% background="Resources/finderbar-back.gif" valign="top" align="left">
+
+<img src="Resources/finderbar-back.gif"><br>
+<img src="Resources/Finderbar_DEVICES.gif"><br>
+<img src="Resources/finderbar-back.gif"><br>
+
+<a style="cursor: default;" onclick="select_network()" href="../../../../Applications/Safari_app/Contents/networklist_finder.html" target="FinderFileView"><img border=0 id="finderbar_network" src="Resources/01_Network.gif"></a><br>
+<a style="cursor: default;" onclick="select_machd()" href="finder_mercuryhd_content.html" target="FinderFileView"><img border=0 id="finderbar_machd" src="Resources/02_MacHD.gif"></a><br><br>
+
+<img src="Resources/finderbar-back.gif"><br>
+<img src="Resources/Finderbar_PLACES.gif"><br>
+<img src="Resources/finderbar-back.gif"><br>
+
+<a style="cursor: default;" onclick="select_home()" href="finder_home_content.html" target="FinderFileView"><img border=0 id="finderbar_home" src="Resources/09_Home_Selected.gif"></a><br>
+<a style="cursor: default;" onclick="select_applications()" href="../../../../Applications/applist_kext.html" target="FinderFileView"><img border=0 id="finderbar_applications" src="Resources/03_Applications.gif"></a><br>
+<a style="cursor: default;" onclick="select_desktop()" href="finder_desktop_content.html" target="FinderFileView"><img border=0 id="finderbar_desktop" src="Resources/04_Desktop.gif"></a><br>
+<a style="cursor: default;" onclick="select_documents()" href="finder_documents_content.html" target="FinderFileView"><img border=0 id="finderbar_documents" src="Resources/05_Documents.gif"></a><br>
+<a style="cursor: default;" onclick="select_music()" href="finder_music_content.html" target="FinderFileView"><img border=0 id="finderbar_music" src="Resources/07_Music.gif"></a><br>
+<a style="cursor: default;" onclick="select_pictures()" href="finder_pictures_content.html" target="FinderFileView"><img border=0 id="finderbar_pictures" src="Resources/08_Pictures.gif"></a><br>
+
+</td>
+
+
+
+<!-- Window contents - dynamic contents with iframe tag -->
+
+<td width=* height=100% bgcolor=#FFFFFF valign=top align=left>
+
+<iframe src="finder_home_content.html" width=100% height=100% name="FinderFileView" id="FinderFileView" frameborder=0 scrolling=auto></iframe>
+
+</td>
+
+
+</tr>
+
+</table>
+
+
+
+</body>
+
+</html>
