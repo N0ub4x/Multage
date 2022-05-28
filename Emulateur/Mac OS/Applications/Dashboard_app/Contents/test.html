@@ -1,0 +1,256 @@
+<html>
+
+<head>
+
+<!-- Dashboard.app Source code -->
+<!-- This development file is part of Mac OS X Mercury: -->
+<!-- The world's most advanced personal website -->
+
+<!-- Copyright (c) 2007 Daniel Black -->
+
+<!-- To be implemented into main website, to work from Dock directly -->
+<!-- Also runnable from Finder and if possible Moonlight -->
+
+<!-- Do not steal Mac OS X -->
+
+
+<style type="text/css">
+
+.hiddenPic {display:none;}
+.Dashboard {
+background-color: rgb(0, 0, 0);
+opacity: 0.7; /* Safari, Opera */
+-moz-opacity:0.70; /* FireFox */
+filter: alpha(opacity=70); /* IE */
+height: 100%;
+width: 100%;
+background-repeat:repeat;
+position:fixed;
+top: 0px;
+left: 0px;
+z-index: 1;
+}
+
+.Widgets {
+filter:Alpha(opacity:100);
+position:fixed;
+z-index: 2;
+}
+
+
+</style>
+
+<script type="text/javascript" src="MacOS/widgets.js"></script>
+
+<script>
+function showWidgets() {
+	
+document.getElementById('widget_01').style.display = '';
+document.getElementById('widget_02').style.display = '';
+document.getElementById('widget_03').style.display = '';
+document.getElementById('widget_04').style.display = '';
+document.getElementById('widget_05').style.display = '';
+document.getElementById('widget_06').style.display = '';
+document.getElementById('widget_07').style.display = '';
+document.getElementById('widget_08').style.display = '';
+
+document.getElementById('close_01').style.display = '';
+document.getElementById('close_02').style.display = '';
+document.getElementById('close_03').style.display = '';
+document.getElementById('close_04').style.display = '';
+document.getElementById('close_05').style.display = '';
+document.getElementById('close_06').style.display = '';
+document.getElementById('close_07').style.display = '';
+document.getElementById('close_08').style.display = '';
+
+opacity('widget_01', 0, 100, 1300);
+opacity('widget_02', 0, 100, 900);
+opacity('widget_03', 0, 100, 1400);
+opacity('widget_04', 0, 100, 1000);
+opacity('widget_05', 0, 100, 800);
+opacity('widget_06', 0, 100, 1100);
+opacity('widget_07', 0, 100, 1000);
+opacity('widget_08', 0, 100, 1300);
+
+opacity('close_01', 0, 100, 1300);
+opacity('close_02', 0, 100, 1300);
+opacity('close_03', 0, 100, 1300);
+opacity('close_04', 0, 100, 1300);
+opacity('close_05', 0, 100, 1300);
+opacity('close_06', 0, 100, 1300);
+opacity('close_07', 0, 100, 1300);
+opacity('close_08', 0, 100, 1300);
+
+}
+</script>
+
+<script>
+function closeWidget01() {
+
+opacity('widget_01', 100, 0, 1000);
+opacity('close_01', 100, 0, 1000);
+
+}
+
+function closeWidget02() {
+
+opacity('widget_02', 100, 0, 1000);
+opacity('close_02', 100, 0, 1000);
+
+}
+
+function closeWidget03() {
+
+opacity('widget_03', 100, 0, 1000);
+opacity('close_03', 100, 0, 1000);
+
+}
+
+function closeWidget04() {
+
+opacity('widget_04', 100, 0, 1000);
+opacity('close_04', 100, 0, 1000);
+
+}
+
+function closeWidget05() {
+
+opacity('widget_05', 100, 0, 1000);
+opacity('close_05', 100, 0, 1000);
+
+}
+
+function closeWidget06() {
+
+opacity('widget_06', 100, 0, 1000);
+opacity('close_06', 100, 0, 1000);
+
+}
+
+function closeWidget07() {
+
+opacity('widget_07', 100, 0, 1000);
+opacity('close_07', 100, 0, 1000);
+
+}
+
+function closeWidget08() {
+
+opacity('widget_08', 100, 0, 1000);
+opacity('close_08', 100, 0, 1000);
+
+}
+</script>
+
+</head>
+
+
+<body bgcolor=white marginwidth=0 marginheight=0>
+
+<div id="DashboardLayer" class="Dashboard">
+<script language="javascript" type="text/javascript">
+document.getElementById("DashboardLayer").style.display = "none";
+</script>
+</div>
+
+
+<div id="WidgetLayer" class="Widgets" align="center">
+
+<script language="javascript" type="text/javascript">
+document.getElementById("WidgetLayer").style.display = "none";
+
+document.getElementbyId("widget_01").style.display = "none";
+document.getElementbyId("widget_02").style.display = "none";
+document.getElementbyId("widget_03").style.display = "none";
+document.getElementbyId("widget_04").style.display = "none";
+document.getElementbyId("widget_05").style.display = "none";
+document.getElementbyId("widget_06").style.display = "none";
+document.getElementbyId("widget_07").style.display = "none";
+document.getElementbyId("widget_08").style.display = "none";
+
+document.getElementbyId("close_01").style.display = "none";
+document.getElementbyId("close_02").style.display = "none";
+document.getElementbyId("close_03").style.display = "none";
+document.getElementbyId("close_04").style.display = "none";
+document.getElementbyId("close_05").style.display = "none";
+document.getElementbyId("close_06").style.display = "none";
+document.getElementbyId("close_07").style.display = "none";
+document.getElementbyId("close_08").style.display = "none";
+</script>
+
+<table width=1024 height=768 border=0 cellspacing=0 cellpadding=0 align=center>
+<tr>
+<td valign=top align=center height=650>
+
+<table width=1024 height=650 border=0 cellspacing=0 cellpadding=0 align=center>
+<tr height=240>
+
+<td width=200 valign=top align=left>
+<a href=# onclick="javascript:document.getElementById('DashboardLayer').style.display = 'none';document.getElementById('WidgetLayer').style.display = 'none'"><img src=Resources/close_dashboard.png border=0 style="cursor: default;"></a><br><br>&nbsp;&nbsp;&nbsp;<img src="Resources/close_widget.png" align=top id="close_01" onclick="javascript:closeWidget01()"><img src="Resources/Widgets/PSP.png" id="widget_01" class="Widgets">
+</td>
+
+<td width=153 valign=top align=left><br><br>
+<img src="Resources/close_widget.png" align=top id="close_02" onclick="javascript:closeWidget02()"><img src="Resources/Widgets/iPod5ive.png" id="widget_02" class="Widgets" align=top>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="Resources/close_widget.png" align=top id="close_06" onclick="javascript:closeWidget06()"><img src="Resources/Widgets/XBoxCrystal.png" id="widget_06" class="Widgets">
+</td>
+
+<td width=225 valign=top align=left><br><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="Resources/close_widget.png" align=top id="close_03" onclick="javascript:closeWidget03()"><img src="Resources/Widgets/V600i.png" id="widget_03" class="Widgets">
+</td>
+
+</tr>
+
+<tr height=250>
+
+<td width=276 valign=top align=left><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="Resources/close_widget.png" align=top id="close_04" onclick="javascript:closeWidget04()"><img src="Resources/Widgets/iMac_G5.png" id="widget_04" class="Widgets">
+</td>
+
+<td width=240 valign=top align=left><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="Resources/close_widget.png" align=top id="close_05" onclick="javascript:closeWidget05()"><img src="Resources/Widgets/Stargate.png" id="widget_05" class="Widgets">
+</td>
+
+<td width=228 valign=top align=left><br><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="Resources/close_widget.png" align=top id="close_08" onclick="javascript:closeWidget08()"><img src="Resources/Widgets/MacBook.png" id="widget_08" class="Widgets">
+</td>
+
+</tr>
+
+<tr>
+
+<td width=128 valign=top align=left>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="Resources/close_widget.png" align=top id="close_07" onclick="javascript:closeWidget07()"><img src="Resources/Widgets/PS2.png" id="widget_07" class="Widgets">
+</td>
+
+<td width=264 valign=top align=right>
+</td>
+
+<td width=* valign=top align=left>
+</td>
+
+</tr>
+
+</table>
+
+
+</td>
+</tr>
+
+<tr height=118>
+
+<td height=118 align=center valign=middle background="Resources/dashboardbar-back.png">
+WIDGET CONTROLS HERE
+</td>
+
+</table>
+
+
+</div>
+
+
+<a href=# onclick="javascript:document.getElementById('DashboardLayer').style.display = '';document.getElementById('WidgetLayer').style.display = '';showWidgets()">dashboard! wheee! =)</a><br><br>
+
+widgets not draggable yet. working on it. water effect is missing too.
+
+</body>
+
+</html>
