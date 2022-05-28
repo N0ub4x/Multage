@@ -1,0 +1,118 @@
+<html>
+
+<head>
+<title>Booting.</title>
+
+<script language="JavaScript1.1">
+<!-- begin hiding
+
+// You may modify the following:
+	var locationAfterPreload = "../System/CoreServices/LoginWindow_app/Contents/unixboot.html" // URL of the page after preload finishes
+	var lengthOfPreloadBar = 150 // Length of preload bar (in pixels)
+	var heightOfPreloadBar = 1 // Height of preload bar (in pixels)
+	// Put the URLs of images that you want to preload below (as many as you want)
+	var yourImages = new Array
+	
+	(
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/01-AppleMenu/00_MenuTop.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/01-AppleMenu/0A-Seperator.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/01-AppleMenu/01-Apple-AboutThisMac_Sel.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/01-AppleMenu/01-Apple-AboutThisMac.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/01-AppleMenu/02-SoftwareUpdate_Sel.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/01-AppleMenu/03-OSXSoftware_Sel.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/01-AppleMenu/04-SysPrefs_Sel.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/01-AppleMenu/04-SysPrefs.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/01-AppleMenu/05-Dock_INA.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/01-AppleMenu/06-Location_INA.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/01-AppleMenu/08-Restart_Sel.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/01-AppleMenu/08-Restart.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/01-AppleMenu/09-ShutDown_Sel.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/01-AppleMenu/09-ShutDown.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/01-AppleMenu/10-Logout_Sel.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/01-AppleMenu/10-Logout.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/01-AppleMenu/99_MenuBottom.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/02-FinderMenu/00_MenuTop.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/02-FinderMenu/0A-Seperator.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/02-FinderMenu/01-AboutFinder_Sel.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/02-FinderMenu/01-AboutFinder.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/02-FinderMenu/02-Prefrences_INA.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/02-FinderMenu/03-EmptyTrash_INA.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/02-FinderMenu/04-SecureEmptyTrash_INA.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/02-FinderMenu/05-Services_INA.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/02-FinderMenu/06-HideFinder_INA.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/02-FinderMenu/07-HideOthers_INA.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/02-FinderMenu/08-ShowAll_INA.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/02-FinderMenu/99_MenuBottom.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Label_MercuryHD.png"
+	)
+
+// Do not modify anything beyond this point!
+if (document.images) {
+	var dots = new Array() 
+	dots[0] = new Image(1,1)
+	dots[0].src = "transparent.png" // default preloadbar color (note: You can substitute it with your image, but it has to be 1x1 size)
+	dots[1] = new Image(1,1)
+	dots[1].src = "transparent.png" // color of bar as preloading progresses (same note as above)
+	var preImages = new Array(),coverage = Math.floor(lengthOfPreloadBar/yourImages.length),currCount = 0
+	var loaded = new Array(),i,covered,timerID
+	var leftOverWidth = lengthOfPreloadBar%coverage
+}
+function loadImages() { 
+	for (i = 0; i < yourImages.length; i++) { 
+		preImages[i] = new Image()
+		preImages[i].src = yourImages[i]
+	}
+	for (i = 0; i < preImages.length; i++) { 
+		loaded[i] = false
+	}
+	checkLoad()
+}
+function checkLoad() {
+	if (currCount == preImages.length) { 
+		location.replace(locationAfterPreload)
+		return
+	}
+	for (i = 0; i <= preImages.length; i++) {
+		if (loaded[i] == false && preImages[i].complete) {
+			loaded[i] = true
+			eval("document.img" + currCount + ".src=dots[1].src")
+			currCount++
+		}
+	}
+	timerID = setTimeout("checkLoad()",10) 
+}
+// end hiding -->
+</script>
+
+</head>
+
+
+<!-- X11 takes over. Please wait. -->
+
+</head>
+
+<body marginwidth=0 marginheight=0 bgcolor=#426bad oncontextmenu="return false;">
+
+<script language="JavaScript1.1">
+
+// It is recommended that you put a link to the target URL just in case if the visitor wants to skip preloading
+// for some reason, or his browser doesn't support JavaScript image object.
+if (document.images) {
+	var preloadBar = ''
+	for (i = 0; i < yourImages.length-1; i++) {
+		preloadBar += '<img src="' + dots[0].src + '" width="' + coverage + '" height="' + heightOfPreloadBar + '" name="img' + i + '" align="absmiddle">'
+	}
+	preloadBar += '<img src="' + dots[0].src + '" width="' + (leftOverWidth+coverage) + '" height="' + heightOfPreloadBar + '" name="img' + (yourImages.length-1) + '" align="absmiddle">'
+	document.write(preloadBar)
+	loadImages()
+}
+
+</script>
+
+</body>
+
+
+<!-- ...and see why 1984 won't be... like "1984". Introducing Macintosh. ;-) -->
+
+
+</html>

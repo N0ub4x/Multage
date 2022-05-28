@@ -1,0 +1,203 @@
+<html>
+<head>
+<title>Booting.</title>
+
+<!--
+OS X MERCURY
+Code Name 'Asteroid'
+(c) 2006 - 2007 Marcus Strehlow
+Do not steal Mac OS X
+
+This file essentially 'boots' up the entire OS X Mercury desktop and
+preloads all important and larger images. While this is happening a
+progress bar will be displayed on a standard Mac boot-screen. Before
+this file is displayed, the Apple Bong sounds. Just like on a Mac.
+
+No verbose mode (-v) available.
+
+Welcome to Darwin.
+
+Uncompressing kernel...   OK.
+-->
+
+<script language="JavaScript1.1">
+<!-- begin hiding
+
+// You may modify the following:
+	var locationAfterPreload = "X11boot.html" // URL of the page after preload finishes
+	var lengthOfPreloadBar = 150 // Length of preload bar (in pixels)
+	var heightOfPreloadBar = 7 // Height of preload bar (in pixels)
+	// Put the URLs of images that you want to preload below (as many as you want)
+	var yourImages = new Array
+	
+	(
+	"../Library/DesktopWallpaper/1024x768/AquaBlue.jpg",
+	"../System/CoreServices/Dock_app/Contents/Resources/dock-left-start.png",
+	"../System/CoreServices/Dock_app/Contents/Resources/dock-middle.png",
+	"../System/CoreServices/Dock_app/Contents/Resources/dock-right-end.png",
+	"../System/CoreServices/Dock_app/Contents/Resources/dock-seperator.png",
+	"../System/CoreServices/Dock_app/Contents/Resources/Finder.png",
+	"../System/CoreServices/Dock_app/Contents/Resources/Dashboard.png",
+	"../System/CoreServices/Dock_app/Contents/Resources/Safari.png",
+	"../System/CoreServices/Dock_app/Contents/Resources/Mail.png",
+	"../System/CoreServices/Dock_app/Contents/Resources/iTunes.png",
+	"../System/CoreServices/Dock_app/Contents/Resources/iChat.png",
+	"../System/CoreServices/Dock_app/Contents/Resources/iWeb.png",
+	"../System/CoreServices/Dock_app/Contents/Resources/iPhoto.png",
+	"../System/CoreServices/Dock_app/Contents/Resources/Documents.png",
+	"../System/CoreServices/Dock_app/Contents/Resources/Web.png",
+	"../System/CoreServices/Dock_app/Contents/Resources/Trashcan.png",
+	"../System/CoreServices/TimeMachine_app/Contents/Resources/app_icns.png",
+	"../System/CoreServices/SystemPreferences_app/Contents/Resources/app_icns.png",
+	"../System/CoreServices/LoginWindow_app/Contents/Resources/bootsplash.png",
+	"../Applications/Dashboard_app/Contents/Resources/Widgets/iMac_G5.png",
+	"../Applications/Dashboard_app/Contents/Resources/Widgets/iPod_5ive.png",
+	"../Applications/Dashboard_app/Contents/Resources/Widgets/MacBook.png",
+	"../Applications/Dashboard_app/Contents/Resources/Widgets/PS2.png",
+	"../Applications/Dashboard_app/Contents/Resources/Widgets/PSP.png",
+	"../Applications/Dashboard_app/Contents/Resources/Widgets/Stargate.png",
+	"../Applications/Dashboard_app/Contents/Resources/Widgets/V600i.png",
+	"../Applications/Dashboard_app/Contents/Resources/Widgets/Wii.png",
+	"../Applications/TimeMachine_app/Contents/Resources/timemachine_galaxy.jpg",
+	"../System/CoreServices/Finder_app/Contents/Resources/apple-menu.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/menubar-back.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/spotlight.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/MercuryDrive.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/01-File.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/04-Go.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/06-Help.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/Menus/00-AppNames/Finder.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/button_settings.gif",
+	"../System/CoreServices/Finder_app/Contents/Resources/button_back.gif",
+	"../System/CoreServices/Finder_app/Contents/Resources/button_forward.gif",
+	"../System/CoreServices/Finder_app/Contents/Resources/toolbar_back.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/sound_wlan_placeholder.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/min.gif",
+	"../System/CoreServices/Finder_app/Contents/Resources/max.gif",
+	"../System/CoreServices/Finder_app/Contents/Resources/close.gif",
+	"../System/CoreServices/Finder_app/Contents/Resources/01_Network.gif",
+	"../System/CoreServices/Finder_app/Contents/Resources/02_MacHD.gif",
+	"../System/CoreServices/Finder_app/Contents/Resources/03_Applications.gif",
+	"../System/CoreServices/Finder_app/Contents/Resources/04_Desktop.gif",
+	"../System/CoreServices/Finder_app/Contents/Resources/05_Documents.gif",
+	"../System/CoreServices/Finder_app/Contents/Resources/07_Music.gif",
+	"../System/CoreServices/Finder_app/Contents/Resources/08_Pictures.gif",
+	"../System/CoreServices/Finder_app/Contents/Resources/01_Network_Selected.gif",
+	"../System/CoreServices/Finder_app/Contents/Resources/02_MacHD_Selected.gif",
+	"../System/CoreServices/Finder_app/Contents/Resources/03_Applications_Selected.gif",
+	"../System/CoreServices/Finder_app/Contents/Resources/04_Desktop_Selected.gif",
+	"../System/CoreServices/Finder_app/Contents/Resources/05_Documents_Selected.gif",
+	"../System/CoreServices/Finder_app/Contents/Resources/07_Music_Selected.gif",
+	"../System/CoreServices/Finder_app/Contents/Resources/08_Pictures_Selected.gif",
+	"../System/CoreServices/Finder_app/Contents/Resources/icon_applications.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/icon_bookmark.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/icon_desktop.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/icon_documents.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/icon_folder.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/icon_homefolder.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/icon_library.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/icon_mp3.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/icon_music.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/icon_network.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/icon_pdf.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/icon_photoroll.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/icon_pictures.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/icon_x.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/spotlight-finder-left.gif",
+	"../System/CoreServices/Finder_app/Contents/Resources/spotlight-finder-middle.gif",
+	"../System/CoreServices/Finder_app/Contents/Resources/spotlight-finder-right.gif",
+	"../System/CoreServices/Finder_app/Contents/MacOS/themes/mac_os_x/close.gif",
+	"../System/CoreServices/Finder_app/Contents/MacOS/themes/mac_os_x/T_Main.png",
+	"../System/CoreServices/Finder_app/Contents/MacOS/themes/mac_os_x/TL_Main.png",
+	"../System/CoreServices/Finder_app/Contents/MacOS/themes/mac_os_x/toolbar_back.png",
+	"../System/CoreServices/Finder_app/Contents/MacOS/themes/mac_os_x/TR_Main.png",
+	"../System/CoreServices/Finder_app/Contents/MacOS/themes/mac_os_x/maximize.gif",
+	"../System/CoreServices/Finder_app/Contents/MacOS/themes/mac_os_x/minimize.gif",
+	"../System/CoreServices/Finder_app/Contents/MacOS/themes/mac_os_x/B_Main.png",
+	"../System/CoreServices/Finder_app/Contents/MacOS/themes/mac_os_x/B.png",
+	"../System/CoreServices/Finder_app/Contents/MacOS/themes/mac_os_x/BL_Main.png",
+	"../System/CoreServices/Finder_app/Contents/MacOS/themes/mac_os_x/BL.png",
+	"../System/CoreServices/Finder_app/Contents/MacOS/themes/mac_os_x/BR_Main.png",
+	"../System/CoreServices/Finder_app/Contents/MacOS/themes/mac_os_x/BR.png",
+	"../System/CoreServices/Finder_app/Contents/MacOS/themes/mac_os_x/L_Main.png",
+	"../System/CoreServices/Finder_app/Contents/MacOS/themes/mac_os_x/L.png",
+	"../System/CoreServices/Finder_app/Contents/MacOS/themes/mac_os_x/R_Main.png",
+	"../System/CoreServices/Finder_app/Contents/MacOS/themes/mac_os_x/R.png",
+	"../System/CoreServices/Finder_app/Contents/MacOS/themes/mac_os_x/T.png",
+	"../System/CoreServices/Finder_app/Contents/MacOS/themes/mac_os_x/TL.png",
+	"../System/CoreServices/Finder_app/Contents/MacOS/themes/mac_os_x/TR.png",
+	"../System/CoreServices/Finder_app/Contents/Resources/aboutthismac.jpg",
+	"../System/CoreServices/Finder_app/Contents/Resources/Label_MercuryHD.png"
+	)
+
+// Do not modify anything beyond this point!
+if (document.images) {
+	var dots = new Array() 
+	dots[0] = new Image(1,1)
+	dots[0].src = "bootbar.gif" // default preloadbar color (note: You can substitute it with your image, but it has to be 1x1 size)
+	dots[1] = new Image(1,1)
+	dots[1].src = "bootprog.gif" // color of bar as preloading progresses (same note as above)
+	var preImages = new Array(),coverage = Math.floor(lengthOfPreloadBar/yourImages.length),currCount = 0
+	var loaded = new Array(),i,covered,timerID
+	var leftOverWidth = lengthOfPreloadBar%coverage
+}
+function loadImages() { 
+	for (i = 0; i < yourImages.length; i++) { 
+		preImages[i] = new Image()
+		preImages[i].src = yourImages[i]
+	}
+	for (i = 0; i < preImages.length; i++) { 
+		loaded[i] = false
+	}
+	checkLoad()
+}
+function checkLoad() {
+	if (currCount == preImages.length) { 
+		location.replace(locationAfterPreload)
+		return
+	}
+	for (i = 0; i <= preImages.length; i++) {
+		if (loaded[i] == false && preImages[i].complete) {
+			loaded[i] = true
+			eval("document.img" + currCount + ".src=dots[1].src")
+			currCount++
+		}
+	}
+	timerID = setTimeout("checkLoad()",10) 
+}
+// end hiding -->
+</script>
+
+</head>
+
+<body bgcolor="#b2b2b2" background="bootsplash_nonverbose.gif" marginwidth=0 marginheight=0 oncontextmenu="return false;">
+
+<table border=0 width=100% height=100% cellspacing=0 cellpadding=0>
+<tr height=530>
+</tr>
+
+<tr height=*>
+<td valign=top align=center>
+<script language="JavaScript1.1">
+
+// It is recommended that you put a link to the target URL just in case if the visitor wants to skip preloading
+// for some reason, or his browser doesn't support JavaScript image object.
+if (document.images) {
+	var preloadBar = ''
+	for (i = 0; i < yourImages.length-1; i++) {
+		preloadBar += '<img src="' + dots[0].src + '" width="' + coverage + '" height="' + heightOfPreloadBar + '" name="img' + i + '" align="absmiddle">'
+	}
+	preloadBar += '<img src="' + dots[0].src + '" width="' + (leftOverWidth+coverage) + '" height="' + heightOfPreloadBar + '" name="img' + (yourImages.length-1) + '" align="absmiddle">'
+	document.write(preloadBar)
+	loadImages()
+}
+
+</script>
+
+</td>
+</tr>
+
+</table>
+
+</body>
+</html>
