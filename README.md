@@ -11,4 +11,4 @@
 
 👉 [Mac OS Mercury](https://n0ub4x.github.io/Multage/Emulateur/Mac%20OS/) 👈
 
-👉 Windows [11](https://win11.blueedge.me/) 👈
+👉 Windows [10](https://mindows.netlify.app/) / [11](https://win11.blueedge.me/) 👈
