@@ -9,6 +9,8 @@
 
 👉 [Android](https://android.blueedge.me/) 👈
 
+👉 <img src="https://raw.githubusercontent.com/N0ub4x/Multage/main/Images/Logo/iHaxDNS.ico" height="20" width="20" /> [iOS](http://ihaxdns.com/ihaxdns/) 👈
+
 👉 [Mac OS Mercury](https://n0ub4x.github.io/Multage/Emulateur/Mac%20OS/) 👈
 
 👉 [Ubuntu](https://www.onworks.net/os-distributions/ubuntu-based/free-ubuntu-online-version-20) 👈
